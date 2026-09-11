@@ -1,0 +1,2 @@
+method,status,seed,epoch,checkpoint,checkpoint_sha256,samples,message_length,psnr,ssim,lpips,top25_local_psnr,p95_mse,gini,ber100,ber70,ber50,ber40,ber30
+"HiDDeN reimplementation, 64-bit retrained",completed,17,200,/mnt/wmcontent/GLX/icassp/MBRS/external_baselines/outputs/hidden_64bit_retrained/hidden_64bit_epoch_200.pyt,a2181ef05278de48d5af28129474d508a3178b849b9b8655f8a3cb46c671a7e8,50,64,28.83415412902832,0.9186909198760986,0.06903545558452606,27.937938690185547,0.0018483723979443312,0.14354593997255327,0.2990625,0.2825,0.290625,0.3261875,0.3938125

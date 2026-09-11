@@ -10,12 +10,14 @@ from torch.utils.data import Dataset
 
 class MBRSDataset(Dataset):
 
-	def __init__(self, path, H=256, W=256):
+	def __init__(self, path, H=256, W=256, sort_files=False):
 		super(MBRSDataset, self).__init__()
 		self.H = H
 		self.W = W
 		self.path = path
-		self.list = os.listdir(path)
+		files = os.listdir(path)
+		# Opt in so historical suites keep their original data-order protocol.
+		self.list = sorted(files) if sort_files else files
 		self.transform = transforms.Compose([
 			transforms.Resize((int(self.H * 1.1), int(self.W * 1.1))),
 			transforms.RandomCrop((self.H, self.W)),

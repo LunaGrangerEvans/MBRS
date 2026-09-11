@@ -1,0 +1,16 @@
+label,run,from_epoch,to_epoch,mean_topk_jaccard,selected_patches
+global,optimization_global_seed17_128_m64_crop,1,10,0.3619047619047619,4
+global,optimization_global_seed17_128_m64_crop,10,40,0.26904761904761904,4
+global,optimization_global_seed17_128_m64_crop,40,100,0.4357142857142857,4
+worst_patch32_weight50,optimization_worst_seed17_128_m64_crop,1,10,0.2952380952380952,4
+worst_patch32_weight50,optimization_worst_seed17_128_m64_crop,10,40,0.4095238095238095,4
+worst_patch32_weight50,optimization_worst_seed17_128_m64_crop,40,100,0.2857142857142857,4
+patch16_weight50,fixed_ablation_patch16_128_m64_crop,1,10,0.5017316017316017,16
+patch16_weight50,fixed_ablation_patch16_128_m64_crop,10,40,0.2977255272907447,16
+patch16_weight50,fixed_ablation_patch16_128_m64_crop,40,100,0.4913955609607783,16
+patch64_weight50,fixed_ablation_patch64_128_m64_crop,1,10,0.625,1
+patch64_weight50,fixed_ablation_patch64_128_m64_crop,10,40,0.625,1
+patch64_weight50,fixed_ablation_patch64_128_m64_crop,40,100,0.625,1
+patch32_weight25,optimization_worst_weight25_seed17_128_m64_crop,1,10,0.22976190476190478,4
+patch32_weight25,optimization_worst_weight25_seed17_128_m64_crop,10,40,0.22976190476190478,4
+patch32_weight25,optimization_worst_weight25_seed17_128_m64_crop,40,100,0.3761904761904762,4

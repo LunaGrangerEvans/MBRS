@@ -1,12 +1,12 @@
 {
-  "result_folder": "MBRS_256_m256/",
-  "model_epoch": 42,
+  "result_folder": "MBRS_128_m64/",
+  "model_epoch": 0,
   "with_diffusion": false,
   "strength_factor": 1,
-  "dataset_path": "datasets/",
-  "H": 256,
-  "W": 256,
-  "message_length": 256,
+  "dataset_path": "/mnt/wmcontent/GLX/icassp/MBRS/datasets/",
+  "H": 128,
+  "W": 128,
+  "message_length": 64,
   "save_images_number": 4,
   "noise_layers": [
     "JpegTest(50)"

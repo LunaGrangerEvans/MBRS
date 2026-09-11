@@ -1,0 +1,23 @@
+% Validation-only color extension table.
+% Requires: \usepackage{booktabs}, \usepackage{graphicx}.
+% Do not merge these validation rows into the formal-test table.
+\begin{table*}[t]
+  \centering
+  \caption{Validation-only color extension. Global OKLab gives the largest CIEDE2000 reduction, while local chroma-tail supervision retains more of the Hard Top10 concentration benefit. These rows are not formal-test main results.}
+  \label{tab:color-extension}
+  \setlength{\tabcolsep}{4.1pt}
+  \renewcommand{\arraystretch}{1.08}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{lrrrrrr}
+    \toprule
+    Method & PSNR $\uparrow$ & Local PSNR $\uparrow$ & Global CIEDE2000 $\downarrow$ & Top10 CIEDE2000 $\downarrow$ & Gini $\downarrow$ & BER30 $\downarrow$ \\
+    \midrule
+    Hard Top10 & 36.4106 & 35.6530 & 3.5986 & 5.2303 & 0.09457 & 0.11100 \\
+    + Global OKLab ($\lambda=0.059149764$) & 36.8182 & 36.0323 & 3.3650 & 4.9206 & 0.10002 & 0.11081 \\
+    + Local chroma-tail & 36.5359 & 35.7769 & 3.5334 & 5.1320 & 0.09526 & 0.11094 \\
+    \bottomrule
+  \end{tabular}%
+  }
+  \\[-2pt]
+  {\footnotesize CIEDE2000 uses the validation color grid; Gini uses native 32$\times$32 RGB patch MSE. The OKLab and chroma-tail runs are validation evidence only.}
+\end{table*}

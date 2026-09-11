@@ -1,0 +1,14 @@
+# External baseline main table
+
+All image-quality columns use the frozen RGB `[0,1]` full-reference definition in [external_metric_consistency_audit.md](external_metric_consistency_audit.md). DISTS/GMSD are unavailable and remain `N/A`. Crop columns are not directly rank-comparable across methods: MBRS exposes raw 64-bit BER, while TrustMark exposes BCH/ECC exact-message success.
+
+| Method | Classification | Payload / ECC | PSNR ↑ | SSIM ↑ | 3-scale MS-SSIM ↑ | DISTS | GMSD | LPIPS ↓ | Top25 local PSNR ↑ | P95 patch MSE ↓ | Gini ↓ | CV ↓ | Top10/Mean ↓ | Top10 energy share ↓ | Bottom10 SSIM ↑ | Top10 LPIPS ↓ | 100% | 70% | 50% | 40% | 30% |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|---|---|---|
+| MBRS Global continuation | STRICT internal | 64 raw bits; no ECC | 36.263172 | 0.950759 | 0.983036 | N/A | N/A | 0.00234960 | 35.522213 | 0.000301653 | 0.095007 | 0.173718 | 1.295702 | 0.161963 | 0.902273 | 0.00136127 | BER 0.000000 | BER 0.000000 | BER 0.001438 | BER 0.041625 | BER 0.113125 |
+| MBRS Hard Patch16 / stride8 / Top10 / MSE selector / image-local 0.5/0.5 | STRICT internal | 64 raw bits; no ECC | 36.442300 | 0.952541 | 0.983690 | N/A | N/A | 0.00221518 | 35.754376 | 0.000284455 | 0.086897 | 0.159015 | 1.270921 | 0.158865 | 0.905504 | 0.00136614 | BER 0.000000 | BER 0.000000 | BER 0.001500 | BER 0.041813 | BER 0.112938 |
+| TrustMark Q | REFERENCE only | 100 internal bits; BCH-5; 61 data bits | 42.632394 | 0.990987 | 0.995099 | N/A | N/A | 0.00096475 | 39.707519 | 0.000130456 | 0.355392 | 0.675501 | 2.344941 | 0.293118 | 0.977458 | 0.00039995 | exact 100.0% / detect 100.0% | exact 97.2% / detect 97.2% | exact 58.4% / detect 59.2% | exact 11.2% / detect 12.4% | exact 0.0% / detect 1.2% |
+| TrustMark P | REFERENCE only | 100 internal bits; BCH-5; 61 data bits | 48.308034 | 0.997511 | 0.998849 | N/A | N/A | 0.00030470 | 46.572266 | 0.000025546 | 0.196823 | 0.361190 | 1.681308 | 0.210164 | 0.994554 | 0.00022314 | exact 96.0% / detect 96.0% | exact 84.0% / detect 84.4% | exact 36.8% / detect 38.0% | exact 4.4% / detect 4.8% | exact 0.0% / detect 2.8% |
+| StegaStamp | REFERENCE blocked | 100 model bits; 56 BCH-5 payload bits | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| HiDDeN | REQUIRES RETRAINING | No verified pretrained checkpoint; payload/ECC not frozen | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+
+TrustMark output provenance and per-image decode records are under `/mnt/wmcontent/GLX/icassp/MBRS/external_baselines/outputs/trustmark_Q/` and `trustmark_P/`. These rows are actual official inference results, but not strict MBRS rankings because the payload, ECC, preprocessing, and decoder semantics differ.

@@ -1,0 +1,26 @@
+[
+  {
+    "candidate": "Hard stride8 Top25",
+    "global_epoch": 1,
+    "candidate_epoch": 1,
+    "global_psnr": 34.8787616249097,
+    "candidate_psnr": 34.886678810731816,
+    "gap": 0.007917185822115869
+  },
+  {
+    "candidate": "Hard stride8 Top10",
+    "global_epoch": 1,
+    "candidate_epoch": 1,
+    "global_psnr": 34.8787616249097,
+    "candidate_psnr": 34.88115743342655,
+    "gap": 0.0023958085168516163
+  },
+  {
+    "candidate": "Gradient-aware Top10 alpha2",
+    "global_epoch": 5,
+    "candidate_epoch": 5,
+    "global_psnr": 35.276964854695244,
+    "candidate_psnr": 35.289055528711444,
+    "gap": 0.012090674016199898
+  }
+]

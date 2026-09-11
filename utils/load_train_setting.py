@@ -29,7 +29,11 @@ file preparing
 full_project_name = project_name + "_m" + str(message_length)
 for noise in noise_layers:
 	full_project_name += "_" + noise
-result_folder = "results/" + time.strftime(full_project_name + "__%Y_%m_%d__%H_%M_%S", time.localtime()) + "/"
+results_root = os.environ.get("MBRS_RESULTS_ROOT", "results")
+os.makedirs(results_root, exist_ok=True)
+result_folder = os.path.join(
+	results_root, time.strftime(full_project_name + "__%Y_%m_%d__%H_%M_%S", time.localtime())
+) + "/"
 if not os.path.exists(result_folder): os.mkdir(result_folder)
 if not os.path.exists(result_folder + "images/"): os.mkdir(result_folder + "images/")
 if not os.path.exists(result_folder + "models/"): os.mkdir(result_folder + "models/")

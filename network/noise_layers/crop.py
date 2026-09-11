@@ -39,6 +39,30 @@ class Crop(nn.Module):
 
 		return image * mask
 
+
+class RandomCrop(nn.Module):
+	"""Keep a randomly placed rectangle whose area is in a given range."""
+
+	def __init__(self, min_area, max_area):
+		super(RandomCrop, self).__init__()
+		if not 0 < min_area <= max_area <= 1:
+			raise ValueError("crop area must satisfy 0 < min_area <= max_area <= 1")
+		self.min_area = min_area
+		self.max_area = max_area
+
+	def forward(self, image_and_cover):
+		image, cover_image = image_and_cover
+		min_side = self.min_area ** 0.5
+		max_side = self.max_area ** 0.5
+		height_ratio = np.random.uniform(min_side, max_side)
+		width_ratio = np.random.uniform(min_side, max_side)
+		h_start, h_end, w_start, w_end = get_random_rectangle_inside(
+			image.shape, height_ratio, width_ratio
+		)
+		mask = torch.zeros_like(image)
+		mask[:, :, h_start:h_end, w_start:w_end] = 1
+		return image * mask
+
 class Cropout(nn.Module):
 
 	def __init__(self, height_ratio, width_ratio):

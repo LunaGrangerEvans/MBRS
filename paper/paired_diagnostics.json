@@ -1,0 +1,80 @@
+{
+  "global_psnr": {
+    "mean_delta": 0.16596063867139166,
+    "median_delta": 0.13808205469760182,
+    "percent_lower": 10.0,
+    "percent_higher": 90.0
+  },
+  "global_ssim": {
+    "mean_delta": 0.0017818427085876465,
+    "median_delta": 0.000748753547668457,
+    "percent_lower": 14.000000000000002,
+    "percent_higher": 86.0
+  },
+  "global_ms_ssim": {
+    "mean_delta": 0.0006539559364318847,
+    "median_delta": 0.00028827786445617676,
+    "percent_lower": 14.000000000000002,
+    "percent_higher": 86.0
+  },
+  "full_lpips": {
+    "mean_delta": -0.00013442080002278088,
+    "median_delta": -0.00012477661948651075,
+    "percent_lower": 76.0,
+    "percent_higher": 24.0
+  },
+  "top25_local_psnr": {
+    "mean_delta": 0.23216308497656968,
+    "median_delta": 0.2317939619921674,
+    "percent_lower": 4.0,
+    "percent_higher": 96.0
+  },
+  "patch_mse_p95": {
+    "mean_delta": -1.7198072091559878e-05,
+    "median_delta": -1.5640758647350594e-05,
+    "percent_lower": 96.0,
+    "percent_higher": 4.0
+  },
+  "gini": {
+    "mean_delta": -0.008109840280679263,
+    "median_delta": -0.007310785761528188,
+    "percent_lower": 98.0,
+    "percent_higher": 2.0
+  },
+  "cv": {
+    "mean_delta": -0.014703099601071768,
+    "median_delta": -0.013803991783240772,
+    "percent_lower": 98.0,
+    "percent_higher": 2.0
+  },
+  "top10_over_mean": {
+    "mean_delta": -0.024780837562062032,
+    "median_delta": -0.019743473593191174,
+    "percent_lower": 92.0,
+    "percent_higher": 8.0
+  },
+  "top10_energy_share": {
+    "mean_delta": -0.003097604695257754,
+    "median_delta": -0.0024679341991488968,
+    "percent_lower": 92.0,
+    "percent_higher": 8.0
+  },
+  "patch_ssim_bottom10_mean": {
+    "mean_delta": 0.003230597972869873,
+    "median_delta": 0.0009118318557739258,
+    "percent_lower": 34.0,
+    "percent_higher": 66.0
+  },
+  "patch_lpips_top10_mean": {
+    "mean_delta": 4.870253615081311e-06,
+    "median_delta": -3.311922773718834e-05,
+    "percent_lower": 62.0,
+    "percent_higher": 38.0
+  },
+  "ssim_tail_gap": {
+    "mean_delta": -0.001271817684173584,
+    "median_delta": -4.25875186920166e-05,
+    "percent_lower": 50.0,
+    "percent_higher": 50.0
+  }
+}

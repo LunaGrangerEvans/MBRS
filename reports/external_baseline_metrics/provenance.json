@@ -1,0 +1,8 @@
+{
+  "manifest": "/mnt/wmcontent/GLX/icassp/MBRS/reports/uniform_eval_manifest.pt",
+  "manifest_sha256": "36790b02ca4754f4209539b91b2fe014833001c4202087130ae9c440fbfd5339",
+  "input": "saved TrustMark Q/P uint8 PNG outputs",
+  "metrics": "same frozen extended definitions: RGB [0,1], SSIM win7, 3-scale MS-SSIM [0.3,0.3,0.4], native32 patch LPIPS/SSIM, native32 MSE concentration",
+  "dists": "N/A; unavailable",
+  "gmsd": "N/A; unavailable"
+}

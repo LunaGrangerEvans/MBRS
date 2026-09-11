@@ -1,0 +1,13 @@
+method,crop,detection_rate,exact_rate,trials
+TrustMark Q,100%,1.0,1.0,50
+TrustMark Q,100%,1.0,1.0,250
+TrustMark Q,70%,0.972,0.972,250
+TrustMark Q,50%,0.592,0.584,250
+TrustMark Q,40%,0.124,0.112,250
+TrustMark Q,30%,0.012,0.0,250
+TrustMark P,100%,0.96,0.96,50
+TrustMark P,100%,0.96,0.96,250
+TrustMark P,70%,0.844,0.84,250
+TrustMark P,50%,0.38,0.368,250
+TrustMark P,40%,0.048,0.044,250
+TrustMark P,30%,0.028,0.0,250

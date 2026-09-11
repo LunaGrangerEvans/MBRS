@@ -20,7 +20,8 @@ lr = 1e-3
 H, W, message_length = settings.H, settings.W, settings.message_length
 noise_layers = settings.noise_layers
 
-result_folder = "results/" + settings.result_folder
+results_root = os.environ.get("MBRS_RESULTS_ROOT", "results")
+result_folder = os.path.join(results_root, settings.result_folder)
 test_base = "/test_"
 for layer in settings.noise_layers:
 	test_base += layer + "_"

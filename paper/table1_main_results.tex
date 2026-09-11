@@ -1,0 +1,24 @@
+% Main formal-test result table.
+% Requires: \usepackage{booktabs}, \usepackage{graphicx}.
+% All values are from paper/main_table.csv; arrows denote the preferred direction.
+\begin{table*}[t]
+  \centering
+  \caption{Main formal-test comparison on the fixed 50-image test manifest. The four rows isolate the global continuation from overlapping hard local-tail supervision; lower is better for P95 MSE, Gini, and BER30.}
+  \label{tab:main-results}
+  \setlength{\tabcolsep}{3.3pt}
+  \renewcommand{\arraystretch}{1.08}
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{lrrrrrrr}
+    \toprule
+    Method & PSNR $\uparrow$ & SSIM $\uparrow$ & LPIPS $\downarrow$ & Top25 local PSNR $\uparrow$ & P95 MSE $\downarrow$ & Gini $\downarrow$ & BER30 $\downarrow$ \\
+    \midrule
+    Global continuation & 36.263172 & 0.950759 & 0.002350 & 35.522213 & 3.016532$\times10^{-4}$ & 0.095007 & 0.1131250 \\
+    Hard P16/S16/Top25 & 36.418147 & 0.952313 & 0.002200 & 35.716045 & 2.876246$\times10^{-4}$ & 0.089031 & 0.1131875 \\
+    Hard P16/S8/Top25 & 36.445329 & 0.952631 & 0.002205 & 35.747490 & 2.856057$\times10^{-4}$ & 0.088604 & 0.1131875 \\
+    \textbf{Hard P16/S8/Top10 (Ours)} & \textbf{36.442300} & \textbf{0.952541} & \textbf{0.002215} & \textbf{35.754376} & \textbf{2.844551$\times10^{-4}$} & \textbf{0.086897} & \textbf{0.1129375} \\
+    \bottomrule
+  \end{tabular}%
+  }
+  \\[-2pt]
+  {\footnotesize P16/S8 denotes 16$\times$16 patches with stride 8; Top$k$ selects the highest raw-MSE patches during training.}
+\end{table*}

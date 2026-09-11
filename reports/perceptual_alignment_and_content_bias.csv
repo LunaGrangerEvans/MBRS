@@ -1,0 +1,21 @@
+method,patch_size,comparison,spearman,top10_jaccard,top15_jaccard,top25_jaccard
+Global continuation,16,mse_vs_variance,0.30926084819441874,,,
+Global continuation,16,mse_vs_gradient_magnitude,0.3127697037616897,,,
+Global continuation,16,mse_vs_edge_density,0.22117619347423761,,,
+Global continuation,16,mse_vs_high_frequency_energy,0.2940273586696639,,,
+Global continuation,32,mse_vs_variance,0.2844455616336901,,,
+Global continuation,32,mse_vs_gradient_magnitude,0.37969097607965013,,,
+Global continuation,32,mse_vs_edge_density,0.29620883782630913,,,
+Global continuation,32,mse_vs_high_frequency_energy,0.38383360755251184,,,
+Global continuation,32,mse_vs_lpips,-0.0018775810587204043,0.07333333333333333,0.09,0.1491428571428571
+Global continuation,32,mse_vs_ssim_degradation,0.008234708179231531,0.09999999999999998,0.13799999999999998,0.15923809523809523
+Hard P16 stride8,16,mse_vs_variance,0.3172292093241415,,,
+Hard P16 stride8,16,mse_vs_gradient_magnitude,0.3317112789757108,,,
+Hard P16 stride8,16,mse_vs_edge_density,0.23155125430188025,,,
+Hard P16 stride8,16,mse_vs_high_frequency_energy,0.30112068541217624,,,
+Hard P16 stride8,32,mse_vs_variance,0.26855772430894426,,,
+Hard P16 stride8,32,mse_vs_gradient_magnitude,0.40222037846934144,,,
+Hard P16 stride8,32,mse_vs_edge_density,0.2940685219820656,,,
+Hard P16 stride8,32,mse_vs_high_frequency_energy,0.3976392072487614,,,
+Hard P16 stride8,32,mse_vs_lpips,-0.01807840324750508,0.08666666666666666,0.09600000000000002,0.15066666666666664
+Hard P16 stride8,32,mse_vs_ssim_degradation,-0.055529571139954916,0.09999999999999998,0.114,0.15161904761904763

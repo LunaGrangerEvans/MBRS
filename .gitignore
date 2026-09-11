@@ -1,0 +1,86 @@
+# Local datasets and host-mounted data
+datasets
+dataset
+data
+
+# Python bytecode and test/type-checker caches
+__pycache__/
+__pycache__
+*.py[cod]
+*.pyc
+*$py.class
+.pytest_cache/
+.pytest_cache
+.mypy_cache/
+.mypy_cache
+.ruff_cache/
+.ruff_cache
+.pytype/
+.ipynb_checkpoints/
+
+# Local environments and dependency caches
+.venv/
+venv/
+env/
+ENV/
+.cache/
+.cache
+cache
+pip-wheel-metadata/
+
+# Third-party checkouts and local experiment environments
+external_baselines/envs
+external_baselines/repos
+
+# Model weights, checkpoints, and serialized training state
+checkpoints
+checkpoint
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.bin
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+# Generated experiment outputs and local runtime state
+outputs
+results
+logs
+visualizations
+temp
+external_baselines/outputs
+wandb/
+runs
+mlruns/
+tensorboard/
+*.log
+
+# Archives and generated media that do not belong in the source repository
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.7z
+*.mp4
+*.avi
+*.mov
+*.webm
+
+# Generated raster/PDF figures; keep reproducible source tables and vector
+# diagrams in paper/ or reports/ and place rendered images on the mount.
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+paper/figures
+
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

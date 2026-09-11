@@ -1,0 +1,93 @@
+{
+  "protocol": "paper-freeze-v1; current clipped RGB evaluator",
+  "training": false,
+  "source_hashes": {
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/uniform_eval_manifest.pt": "36790b02ca4754f4209539b91b2fe014833001c4202087130ae9c440fbfd5339",
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_crop35_40_manifest.pt": "ffa19caecb5d97e717208d3aad7755e67d4b027d79c7c405e83b82bc6a995dde",
+    "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth": "1a82ec4f9559c5861fdcbd51ddd76b4ecce2507e7ecf8c1a7e63a9ea6cce2907",
+    "/root/workspace/GLX/icassp/MBRS/experiments/freeze_paper_evidence.py": "45bd7c9635b07af4115bed47e16473944925a54382c76fcd17f4404f3dd5096f",
+    "/root/workspace/GLX/icassp/MBRS/experiments/evaluate_extended_image_quality.py": "2476537d1a8235906314d317d55d77b8fa1dc26d9511ffe1ce4d5ed399fe0246",
+    "/root/workspace/GLX/icassp/MBRS/experiments/losses.py": "1283f03c363acb2be95b2ce623541fdc44333a0d302d9e50b273e5e5b6fbc072",
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/external_baseline_metrics/per_image.csv": "9e2e93a2b4e1f207cc3d43f49eb22164f7f83b9148c9ea8ec6da0b8693b8a647",
+    "/root/workspace/GLX/icassp/MBRS/reports/trustmark_raw_bit_results.csv": "3513d2311401278413e6f9317ff734ace561f50b597ede8b0fb18840c5a78732"
+  },
+  "checkpoints": [
+    {
+      "method": "controlled_seed17_global_continuation",
+      "description": "仅整图MSE，无局部项；整图/局部权重=1/0",
+      "checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_global_continuation/checkpoint_0020.pth",
+      "checkpoint_sha256": "31fddd342f8bd8bd003e4fbc0cf10878035b1cda81d3e10a647833aad84e5248",
+      "evaluation_json": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_seed17_gradientaware_alpha2_metrics.json",
+      "evaluation_sha256": "97c853a07bba326ab9be1446a691687f8f362d96c34cb769a5195806e2101b1d",
+      "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth"
+    },
+    {
+      "method": "controlled_seed17_hard_p16_t25_l50",
+      "description": "16×16/步长16，Top25%原始MSE均值；整图/局部权重=0.5/0.5",
+      "checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_hard_p16_t25_l50/checkpoint_0020.pth",
+      "checkpoint_sha256": "ff0a4c3f0cf5f0ab61e51da23ba2677c2ea446b6e7a0421b6ac53a6a989e8d57",
+      "evaluation_json": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_seed17_gradientaware_alpha2_metrics.json",
+      "evaluation_sha256": "97c853a07bba326ab9be1446a691687f8f362d96c34cb769a5195806e2101b1d",
+      "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth"
+    },
+    {
+      "method": "controlled_seed17_hard_patch16_stride8_top25_weight50",
+      "description": "16×16/步长8，Top25%原始MSE均值；整图/局部权重=0.5/0.5",
+      "checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_hard_patch16_stride8_top25_weight50/checkpoint_0020.pth",
+      "checkpoint_sha256": "ce3949ade1cd298b4c55e5290bff7cc0bf240656172b18b9c72155355591eb16",
+      "evaluation_json": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_seed17_gradientaware_alpha2_metrics.json",
+      "evaluation_sha256": "97c853a07bba326ab9be1446a691687f8f362d96c34cb769a5195806e2101b1d",
+      "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth"
+    },
+    {
+      "method": "controlled_seed17_hard_patch16_stride8_top10_global_weight50_local_weight50",
+      "description": "16×16/步长8，Top10%原始MSE均值；整图/局部权重=0.5/0.5",
+      "checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_hard_patch16_stride8_top10_global_weight50_local_weight50/checkpoint_0020.pth",
+      "checkpoint_sha256": "74fd12a6147b20e68477d9439cf6c416181bc48f07cfa3c3384989f48850f92c",
+      "evaluation_json": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_seed17_gradientaware_alpha2_metrics.json",
+      "evaluation_sha256": "97c853a07bba326ab9be1446a691687f8f362d96c34cb769a5195806e2101b1d",
+      "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth"
+    },
+    {
+      "method": "controlled_seed17_soft_p16_t025_l50",
+      "description": "16×16/步长16，归一化softmax，温度0.25，detach=True；整图/局部权重=0.5/0.5",
+      "checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_soft_p16_t025_l50/checkpoint_0020.pth",
+      "checkpoint_sha256": "936c56c8d833e1743eac351ece733c23b7c81e10514efcc957c126f7a498f9f6",
+      "evaluation_json": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_soft_temperature_seed17.json",
+      "evaluation_sha256": "bea0c813ca9d600fa29a7b23d632fe346717c87d45f20416b5986c14b748135c",
+      "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth"
+    },
+    {
+      "method": "controlled_seed17_multiscale_patch16_patch32_top25_weight70_weight30_global_weight50_local_weight50",
+      "description": "0.7×16×16/步长16 Top25% + 0.3×32×32/步长32 Top25%；整图/局部权重=0.5/0.5",
+      "checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_multiscale_patch16_patch32_top25_weight70_weight30_global_weight50_local_weight50/checkpoint_0020.pth",
+      "checkpoint_sha256": "665ef925929c76066ad622a932c3d830fc484c5ae259894066edaf34f1f31cee",
+      "evaluation_json": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_seed17_gradientaware_alpha2_metrics.json",
+      "evaluation_sha256": "97c853a07bba326ab9be1446a691687f8f362d96c34cb769a5195806e2101b1d",
+      "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth"
+    },
+    {
+      "method": "controlled_seed17_excess_patch16_stride16_global_weight50_local_weight50",
+      "description": "16×16/步长16，超均值平方惩罚，阈值1，倍率3；整图/局部权重=0.5/0.5",
+      "checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_excess_patch16_stride16_global_weight50_local_weight50/checkpoint_0020.pth",
+      "checkpoint_sha256": "bae9a2f1997fc1c8d18138e6f2203652e8b648508cf6a301224fe8d04ef3ede5",
+      "evaluation_json": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_seed17_gradientaware_alpha2_metrics.json",
+      "evaluation_sha256": "97c853a07bba326ab9be1446a691687f8f362d96c34cb769a5195806e2101b1d",
+      "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth"
+    },
+    {
+      "method": "seed17_contentaware_gradient_patch16_stride8_top10_alpha2_global0.5_local0.5",
+      "description": "16×16/步长8，Top10%原始MSE均值，按梯度分数选块，alpha=2；整图/局部权重=0.5/0.5",
+      "checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/seed17_contentaware_gradient_patch16_stride8_top10_alpha2_global0.5_local0.5/checkpoint_0020.pth",
+      "checkpoint_sha256": "2a4b12a61c1a437815fd2fc36fbb428d7aaf0fcc1da1f63ff68dc7b48f53be83",
+      "evaluation_json": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_seed17_gradientaware_alpha2_metrics.json",
+      "evaluation_sha256": "97c853a07bba326ab9be1446a691687f8f362d96c34cb769a5195806e2101b1d",
+      "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth"
+    }
+  ],
+  "artifacts": {
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/paper_freeze_v1/per_image.csv": "dc332a5ca6fe36a1a791944ffef6bd2f3c47d8b47327871171426b3bef96c7c6",
+    "/root/workspace/GLX/icassp/MBRS/paper/main_table.csv": "5d5829cb57b796accbeedfb9ce6b9fa28c1f65873451619c382576caed07c2cb",
+    "/root/workspace/GLX/icassp/MBRS/paper/external_reference_table.csv": "40bfdfa66b97822fe980199590d18b3f5bdb9b9b9671459fb2b091f3ff68d58f"
+  }
+}

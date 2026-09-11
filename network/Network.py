@@ -1,5 +1,6 @@
 from .Encoder_MP_Decoder import *
 from .Discriminator import Discriminator
+import kornia.losses
 
 
 class Network:

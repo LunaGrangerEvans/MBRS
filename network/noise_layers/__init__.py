@@ -10,7 +10,7 @@ def get_random_int(int_range: [int]):
 
 
 from .identity import Identity
-from .crop import Crop, Cropout, Dropout
+from .crop import Crop, Cropout, Dropout, RandomCrop
 from .gaussian_noise import GN
 from .middle_filter import MF
 from .gaussian_filter import GF
