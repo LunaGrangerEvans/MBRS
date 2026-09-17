@@ -1,0 +1,19 @@
+% Generated from the frozen one-pass formal project-test evaluation; requires booktabs.
+\begin{table*}[t]
+  \centering
+  \caption{Frozen formal project-test ablation on the fixed 50-image manifest. The progression is global RGB reconstruction, Hard Local-Tail supervision, and the final Ours method with global OKLab regularization.}
+  \label{tab:final_method_ablation}
+  \scriptsize
+  \setlength{\tabcolsep}{4pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr@{}}
+    \toprule
+    Method & PSNR $\uparrow$ & SSIM $\uparrow$ & LPIPS $\downarrow$ & Top-25 local PSNR $\uparrow$ & P95 MSE $\downarrow$ & Gini $\downarrow$ & BER@30 $\downarrow$ \\
+    \midrule
+    MBRS crop-trained global & 36.2632 & 0.9508 & 0.0023496 & 35.5222 & 3.017e-04 & 0.0950 & 0.11313 \\
+    Hard Local-Tail & 36.4423 & 0.9525 & 0.0022152 & 35.7544 & 2.845e-04 & 0.0869 & 0.11294 \\
+    \textbf{Ours} & \textbf{36.8549} & \textbf{0.9570} & \textbf{0.0019171} & \textbf{36.1419} & \textbf{2.620e-04} & 0.0921 & 0.11313 \\
+    \bottomrule
+  \end{tabular*}
+  \vspace{2pt}
+  \parbox{\textwidth}{\scriptsize P95 is the mean of per-image P95 values over the native 32$\times$32 evaluation grid; BER is raw 64-bit BER under the fixed rectangle-mask protocol.}
+\end{table*}

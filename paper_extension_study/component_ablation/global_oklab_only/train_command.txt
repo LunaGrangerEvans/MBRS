@@ -1,0 +1,1 @@
+python3 experiments/train_local_patch.py --config paper_extension_study/component_ablation/global_oklab_only/config.json --output-dir paper_extension_study/component_ablation/global_oklab_only --device cuda --init-checkpoint /mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth

@@ -2,7 +2,7 @@
 
 ## 1. Abstract
 
-Crop-robust watermarking must preserve message recovery after partial image removal while limiting its fidelity cost. Global RGB mean-squared error controls average distortion but does not explicitly supervise its spatial upper tail. We study a simple hard local-tail objective for a crop-trained MBRS encoder–decoder. The method ranks overlapping 16×16 patches with stride 8 by raw MSE and averages the highest 10%, combined equally with global image MSE. In seed17 controlled continuations from a shared source checkpoint, it improves PSNR by 0.179128 dB and Top25 local PSNR by 0.232163 dB over Global continuation. Mean per-image P95 native32 patch MSE decreases from 0.000301653 to 0.000284455, while Gini decreases on 98% of fixed test images. Crop BER changes remain small. SSIM, three-scale MS-SSIM, and full-image LPIPS improve modestly, but local LPIPS remains mixed. A validation-only global OKLab extension further reduces absolute color distortion while slightly weakening normalized concentration. Results support local pixel-tail control in the tested MBRS setting without establishing human perceptual superiority or strict superiority over external systems.
+Crop-robust watermarking must preserve message recovery after partial image removal while limiting its fidelity cost. Global RGB mean-squared error controls average distortion but does not explicitly supervise its spatial upper tail. We study a three-stage crop-trained MBRS objective: global RGB reconstruction, hard local-tail supervision, and a global OKLab fidelity term. The final frozen method ranks overlapping 16×16 patches with stride 8 by raw MSE, averages the highest 10%, and adds OKLab regularization with λ=0.059149764. On the fixed 50-image project-test manifest, Ours improves PSNR by 0.412609 dB and Top25 local PSNR by 0.387519 dB over Hard Local-Tail, reduces mean per-image P95 patch MSE by 7.89%, and reduces global and Top10 CIEDE2000 by 6.62% and 5.98%. BER30 changes by only 0.000188. Gini increases by 6.02%, so normalized concentration remains a secondary diagnostic rather than the primary claim. Results support absolute local-tail and color-aware fidelity control without establishing human perceptual superiority or strict superiority over external systems.
 
 ## 2. Introduction
 
@@ -12,7 +12,7 @@ Global RGB MSE is differentiable and useful for image fidelity, but it averages 
 
 We study this issue in the existing crop-trained MBRS encoder–decoder. The intervention is intentionally small: retain the backbone and crop channel, rank fine-grained overlapping patches by raw MSE, and add the highest-error patches to the image objective. The main configuration uses Patch16, stride8, Top10%, and global/local image-loss weights 0.5/0.5. It is compared with an equal-duration Global continuation from the same source checkpoint.
 
-This paper makes three contributions. First, it formulates crop-robust watermark fidelity from a local distortion-tail perspective rather than relying only on global average distortion. Second, it introduces a simple hard patch-tail objective that suppresses highly distorted local pixel regions while approximately preserving crop BER. Third, it analyzes residual concentration, perceptual metrics, controlled variants, and a color-aware OKLab extension, showing that absolute distortion, spatial concentration, and perceptual/color quality are related but distinct objectives. Hard top-k optimization itself is not claimed as a new general principle [CITATION NEEDED].
+This paper makes three contributions. First, it formulates crop-robust watermark fidelity from a local distortion-tail perspective rather than relying only on global average distortion. Second, it introduces a hard patch-tail objective that suppresses highly distorted local pixel regions while approximately preserving crop BER. Third, it adds and formally verifies a frozen OKLab fidelity refinement, while showing that absolute distortion, spatial concentration, and perceptual/color quality are related but distinct objectives. Hard top-k optimization itself is not claimed as a new general principle [CITATION NEEDED].
 
 ## 3. Method
 
@@ -44,27 +44,29 @@ The 128×128 image produces 225 overlapping candidates. We select k=ceil(0.10×2
 
 L_tail = (1/k) sum_(i in Top10(e)) e_i.
 
-The main training loss is
+The Hard Local-Tail intermediate loss is
 
 L = 10 L_msg + 0.5 L_global + 0.5 L_tail.
 
 Selection uses raw MSE only. The local branch is used during training and adds no inference module. Overlap means that 10% of patch indices is not exactly 10% of unique pixels.
 
-### 3.4 Color-Aware OKLab Extension
+The final Ours objective adds the frozen global OKLab term described below; Hard Local-Tail is retained as the intermediate ablation.
 
-The extension retains the complete Hard Top10 objective and adds a global per-pixel OKLab distance:
+### 3.4 Color-Aware OKLab Refinement
+
+Ours retains the complete Hard Local-Tail objective and adds a global per-pixel OKLab distance:
 
 L_OK = (1/HW) sum_u [sqrt(ΔL_u²+Δa_u²+Δb_u²+ε)−sqrt(ε)].
 
-L_ext = L + λ L_OK.
+L_{Ours} = L_{Hard} + 0.059149764 L_OK.
 
-The transform receives clipped sRGB values and uses the standard linear-sRGB OKLab conversion [CITATION NEEDED]. CIEDE2000 is evaluation-only. The two completed validation weights are λ=0.059149764 and λ=0.029574882. Neither is promoted to the formal main method.
+The transform receives clipped sRGB values and uses the standard linear-sRGB OKLab conversion [CITATION NEEDED]. CIEDE2000 is evaluation-only. The frozen configuration is defined in [final_method_frozen_config.md](../reports/final_method_frozen_config.md); its formal project-test result is in [final_ours_project_test_report.md](../reports/final_ours_project_test_report.md).
 
 ## 4. Experiments and Results
 
 ### 4.1 Setup
 
-The project uses 800 training images and two fixed 50-image partitions from its DIV2K-based split [CITATION NEEDED]. Inputs are 128×128 with 64-bit messages. Controlled continuations use seed17, a shared crop-trained Global epoch100 source, restored Adam/BatchNorm state, batch size 16, learning rate 10⁻⁴, and 20 epochs. The training attack is the existing RandomCrop(0.3,1.0) channel.
+The project uses 800 training images and fixed 50-image validation and project-test partitions from its DIV2K-based split [CITATION NEEDED]. Inputs are 128×128 with 64-bit messages. Controlled continuations use seed17, a shared crop-trained Global epoch100 source, restored Adam/BatchNorm state, batch size 16, learning rate 10⁻⁴, and 20 epochs. The training attack is the existing RandomCrop(0.3,1.0) channel. The final configuration is frozen before formal project-test evaluation.
 
 Quality uses the current clipped-RGB evaluator: PSNR, SSIM, three-scale MS-SSIM, full-image LPIPS, native32 patch MSE, and native32 concentration. Robustness uses raw 64-bit BER under fixed rectangle masks at nominal retained areas 100%, 70%, 50%, 40%, and 30%. Legacy metric values are excluded.
 
@@ -73,9 +75,10 @@ Quality uses the current clipped-RGB evaluator: PSNR, SSIM, three-scale MS-SSIM,
 | Method | PSNR | SSIM | MS-SSIM | Full LPIPS | Top25 local PSNR | P95 MSE | Gini | BER50 | BER30 |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
 | Global continuation | 36.263172 | 0.950759 | 0.983036 | 0.002349598 | 35.522213 | 0.000301653 | 0.095007 | 0.0014375 | 0.1131250 |
-| **Hard Patch16 / stride8 / Top10%** | **36.442300** | **0.952541** | **0.983690** | **0.002215177** | **35.754376** | **0.000284455** | **0.086897** | **0.0015000** | **0.1129375** |
+| Hard Local-Tail | 36.442300 | 0.952541 | 0.983690 | 0.002215177 | 35.754376 | 0.000284455 | 0.086897 | 0.0015000 | 0.1129375 |
+| **Ours** | **36.854909** | **0.957018** | **0.985197** | **0.001917112** | **36.141895** | **0.000261993** | 0.092130 | **0.0015000** | **0.1131250** |
 
-Relative to Global, the main method improves PSNR by 0.179128 dB and Top25 local PSNR by 0.232163 dB. Mean per-image P95 patch MSE decreases by approximately 5.70%. Gini decreases on 98% of test images. BER changes are small: at 50% retained area it changes from 0.0014375 to 0.0015000, and at 30% from 0.1131250 to 0.1129375. This supports approximate preservation of observed crop robustness, not statistical equivalence at every crop ratio.
+Relative to Global, Hard Local-Tail improves PSNR by 0.179128 dB and Top25 local PSNR by 0.232163 dB. Relative to Hard Local-Tail, Ours adds 0.412609 dB PSNR and 0.387519 dB Top25 local PSNR, while mean per-image P95 patch MSE decreases by 7.89%. BER changes remain small; these values support approximate preservation of observed crop robustness, not statistical equivalence at every crop ratio.
 
 ### 4.3 Key Ablation Results
 
@@ -94,9 +97,9 @@ The main method lowers Gini from 0.095007 to 0.086897, CV from 0.173718 to 0.159
 
 Full-image SSIM, MS-SSIM, and LPIPS improve modestly. Local Bottom10 SSIM improves on 66% of images. Local Top10 LPIPS improves on 62%, but its mean changes slightly upward from 0.001361274 to 0.001366144. Local LPIPS therefore remains mixed.
 
-### 4.5 Color-Aware Extension
+### 4.5 Final Ours Result
 
-The OKLab extension is validation-only. At λ=0.029574882, relative to incumbent Hard Top10, PSNR increases by 0.239585 dB, Top25 local PSNR by 0.226884 dB, global CIEDE2000 decreases by 3.70%, and Top10 5×5 CIEDE2000 decreases by 3.42%. BER remains close. Gini increases from 0.094569 to 0.097303. At λ=0.059149764, color and absolute fidelity improve further, but Gini increases to 0.100017. Both candidates improve color error on all 50 validation images, but neither meets the complete preservation gate. OKLab can complement pixel-tail supervision by reducing absolute chromatic distortion, with a small normalized-concentration trade-off.
+The frozen g25 configuration was evaluated once on the fixed formal project-test manifest. Relative to Hard Local-Tail, Ours improves PSNR by 0.412609 dB and Top25 local PSNR by 0.387519 dB; mean per-image P95 and P99 patch MSE decrease by 7.89% and 7.59%, full-image LPIPS decreases by 13.46%, global CIEDE2000 decreases by 6.62%, and Top10 CIEDE2000 decreases by 5.98%. BER30 changes from 0.1129375 to 0.1131250, within the frozen 0.002 tolerance. Gini increases from 0.086897 to 0.092130 (+6.02%) and is reported as a secondary diagnostic, not a gate.
 
 ### 4.6 External Reference
 
@@ -104,6 +107,6 @@ TrustMark Q/P provide higher-fidelity external reference operating points: PSNR 
 
 ## 5. Conclusion
 
-Hard Patch16/stride8/Top10 raw-MSE supervision improves global fidelity, absolute local pixel tails, and normalized residual concentration in the tested crop-trained MBRS setting while approximately preserving observed crop BER. Full-image perceptual metrics improve, but local LPIPS remains mixed. A validation-only OKLab extension further reduces absolute color distortion and improves PSNR, while partly weakening the concentration advantage. These results support treating absolute distortion, spatial concentration, perceptual quality, and color quality as distinct objectives.
+The frozen progression from global RGB reconstruction to Hard Local-Tail to Ours improves global fidelity, absolute local pixel tails, full-image perceptual quality, and color fidelity while approximately preserving observed crop BER. Gini increases from Hard Local-Tail to Ours, reinforcing that absolute local-tail magnitude and normalized spatial concentration are distinct properties. These results support color-aware refinement without making normalized residual uniformity the primary claim.
 
 The evidence is limited to one seed, one backbone, and 50 formal test pairs, with prior project exposure to the test partition. It does not establish human perceptual superiority, cross-seed statistical superiority, or strict superiority over TrustMark. Citation placeholders remain for prior watermarking methods, image-quality metrics, tail-risk terminology, datasets, and color models.

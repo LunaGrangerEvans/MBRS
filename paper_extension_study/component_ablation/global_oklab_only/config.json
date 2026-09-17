@@ -1,0 +1,28 @@
+{
+  "name": "global_oklab_only_seed17",
+  "dataset_path": "/mnt/wmcontent/GLX/icassp/MBRS/datasets",
+  "H": 128,
+  "W": 128,
+  "message_length": 64,
+  "batch_size": 16,
+  "num_workers": 0,
+  "epochs": 20,
+  "lr": 0.0001,
+  "seed": 17,
+  "noise_layers": [
+    "RandomCrop(0.3, 1.0)"
+  ],
+  "message_loss_weight": 10.0,
+  "global_loss_weight": 0.5,
+  "local_loss_weight": 0.0,
+  "local_loss_mode": "none",
+  "local_patch_size": 16,
+  "local_patch_stride": 8,
+  "local_topk_ratio": 0.1,
+  "deterministic": true,
+  "deterministic_warn_only": false,
+  "require_single_gpu": true,
+  "save_every": 5,
+  "global_oklab_weight": 0.059149764,
+  "global_oklab_version": "linear_srgb_author_matrix_v1"
+}

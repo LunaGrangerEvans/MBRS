@@ -1,0 +1,57 @@
+{
+  "input": "reports/final_ours_project_test_per_image.csv",
+  "input_is_authoritative_bundle_provenance": true,
+  "unit_of_resampling": "project-test image index",
+  "n_images": 50,
+  "n_bootstrap": 20000,
+  "analysis_seed": 20260916,
+  "difference_convention": "second_method_minus_first_method",
+  "comparisons": {
+    "global_vs_ours": [
+      "MBRS crop-trained global",
+      "Ours"
+    ],
+    "global_vs_hard": [
+      "MBRS crop-trained global",
+      "Hard Local-Tail"
+    ],
+    "hard_vs_ours": [
+      "Hard Local-Tail",
+      "Ours"
+    ]
+  },
+  "quality_metrics": {
+    "PSNR": "global_psnr",
+    "Top-25 Local PSNR": "top25_local_psnr",
+    "P95 patch MSE": "patch_mse_p95",
+    "P99 patch MSE": "patch_mse_p99",
+    "LPIPS": "full_lpips",
+    "Global CIEDE2000": "ciede2000_global",
+    "Top10 CIEDE2000": "ciede2000_top10",
+    "Gini": "gini"
+  },
+  "ber_metrics": {
+    "BER100": "ber100",
+    "BER70": "ber70",
+    "BER50": "ber50",
+    "BER40": "ber40",
+    "BER30": "ber30"
+  },
+  "lower_is_better": [
+    "BER100",
+    "BER30",
+    "BER40",
+    "BER50",
+    "BER70",
+    "Gini",
+    "Global CIEDE2000",
+    "LPIPS",
+    "P95 patch MSE",
+    "P99 patch MSE",
+    "Top10 CIEDE2000"
+  ],
+  "ci_method": "percentile interval from paired image-level bootstrap distribution",
+  "individual_bits_are_not_bootstrap_units": true,
+  "project_test_used_for_hyperparameter_selection": false,
+  "paper_bundle_unchanged": true
+}

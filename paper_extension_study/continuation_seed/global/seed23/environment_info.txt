@@ -1,0 +1,10 @@
+--- launch environment ---
+2026-09-16T09:43:36Z
+gpu_assignment=0
+Python 3.12.8
+torch 2.7.0+cu126
+cuda 12.6
+visible_devices 1
+device NVIDIA A800-SXM4-80GB
+source=/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth
+source_sha=1a82ec4f9559c5861fdcbd51ddd76b4ecce2507e7ecf8c1a7e63a9ea6cce2907

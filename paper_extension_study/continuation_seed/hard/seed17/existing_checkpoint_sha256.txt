@@ -1,0 +1,1 @@
+74fd12a6147b20e68477d9439cf6c416181bc48f07cfa3c3384989f48850f92c  /mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_hard_patch16_stride8_top10_global_weight50_local_weight50/checkpoint_0020.pth

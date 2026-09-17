@@ -1,0 +1,121 @@
+{
+  "scope": "fixed 50-image validation manifest only",
+  "manifest": "/mnt/wmcontent/GLX/icassp/MBRS/reports/content_selector/validation_manifest.pt",
+  "manifest_sha256": "60cc8b4d7a6cb9f5c0c77b3f66e02d6e0b739b05867123a6ec246ba6e4992de2",
+  "common_target_psnr": 40.72,
+  "common_target_feasible_without_extrapolation": true,
+  "endpoint_psnr": {
+    "HiDDeN-64": 30.140571243601816,
+    "MaskWM-D_64": 38.988421514594066,
+    "MBRS crop-trained global": 40.160195807022546,
+    "Ours = Hard Local-Tail + global OKLab": 40.66639687129186
+  },
+  "alphas": {
+    "HiDDeN-64": 0.2958206981420517,
+    "MaskWM-D_64": 0.8192587196826935,
+    "MBRS crop-trained global": 0.9375831782817841,
+    "Ours = Hard Local-Tail + global OKLab": 0.9938476979732513
+  },
+  "matched_validation_psnr": {
+    "HiDDeN-64": 40.71999959541179,
+    "MaskWM-D_64": 40.72000034135276,
+    "MBRS crop-trained global": 40.71999959541179,
+    "Ours = Hard Local-Tail + global OKLab": 40.71999996838226
+  },
+  "quality_canvas": "common 512x512 display canvas; internal and HiDDeN 128 outputs use the existing antialiased bilinear display path; MaskWM uses frozen native_512 PNGs",
+  "formula": "x_alpha = x + alpha * (x_hat - x), applied as a single global residual-strength scale per method on the common RGB canvas",
+  "external_ber": "not reported as strictly comparable: external decoder semantics/raw-bit path are not verified identical to MBRS; internal Global/Ours BER uses the same MBRS decoder and fixed masks",
+  "selected_samples": [
+    {
+      "sample_number": 1,
+      "sample_id": "0846",
+      "validation_index": 45,
+      "source_filename": "0846.png",
+      "roi": {
+        "x": 48,
+        "y": 28,
+        "width": 32,
+        "height": 32
+      },
+      "global_alpha": 0.9375831782817841,
+      "ours_alpha": 0.9938476979732513,
+      "global_psnr": 42.56409107491137,
+      "ours_psnr": 42.57655031258558,
+      "psnr_mismatch": 0.012459237674214307,
+      "global_local_psnr": 40.9073347987994,
+      "ours_local_psnr": 40.963809432468366,
+      "delta_local_psnr_ours_minus_global": 0.05647463366896943,
+      "global_p95_mse": 8.915341459214687e-05,
+      "ours_p95_mse": 8.701284968992695e-05,
+      "delta_p95_mse_ours_minus_global": -2.1405649022199214e-06,
+      "global_roi_ciede2000": 2.590155601501465,
+      "ours_roi_ciede2000": 2.48789644241333,
+      "roi_color_reduction_global_minus_ours": 0.10225929319858551,
+      "roi_mse_reduction_global_minus_ours": 5.865083949174732e-06,
+      "shared_residual_vmax_x10": 0.35338979959487915,
+      "psnr_match_eligible": true,
+      "selection_rank": 1,
+      "content_diversity_distance_from_sample_1": null
+    },
+    {
+      "sample_number": 2,
+      "sample_id": "0821",
+      "validation_index": 20,
+      "source_filename": "0821.png",
+      "roi": {
+        "x": 84,
+        "y": 32,
+        "width": 32,
+        "height": 32
+      },
+      "global_alpha": 0.9375831782817841,
+      "ours_alpha": 0.9938476979732513,
+      "global_psnr": 39.99045346737774,
+      "ours_psnr": 39.993394607445346,
+      "psnr_mismatch": 0.0029411400676053745,
+      "global_local_psnr": 37.92331883732588,
+      "ours_local_psnr": 37.962929876137665,
+      "delta_local_psnr_ours_minus_global": 0.03961103881178474,
+      "global_p95_mse": 0.0001770018607203383,
+      "ours_p95_mse": 0.00017449161896365695,
+      "delta_p95_mse_ours_minus_global": -2.510241756681353e-06,
+      "global_roi_ciede2000": 2.5945935249328613,
+      "ours_roi_ciede2000": 2.5223331451416016,
+      "roi_color_reduction_global_minus_ours": 0.07226020097732544,
+      "roi_mse_reduction_global_minus_ours": 3.7266590879880823e-06,
+      "shared_residual_vmax_x10": 0.40982645750045776,
+      "psnr_match_eligible": true,
+      "selection_rank": 2,
+      "content_diversity_distance_from_sample_1": 0.4516749642789364
+    }
+  ],
+  "sources_outputs": {
+    "Original": "/mnt/wmcontent/GLX/icassp/MBRS/reports/content_selector/validation_manifest.pt",
+    "HiDDeN-64": "/mnt/wmcontent/GLX/icassp/MBRS/results/fig2_stress/external_baselines/hidden_64bit_validation.pt",
+    "MaskWM-D_64": "/mnt/wmcontent/GLX/icassp/MBRS/external_baselines/outputs/maskwm_validation/D_64bits/native_512",
+    "MBRS crop-trained global": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_global_continuation/checkpoint_0020.pth",
+    "Ours = Hard Local-Tail + global OKLab": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/seed17_crop_hard16_stride8_top10_global_oklab_g25/checkpoint_0020.pth",
+    "HiDDeN_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/external_baselines/outputs/hidden_64bit_retrained/hidden_64bit_epoch_200.pyt",
+    "MaskWM_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/external_baselines/checkpoints/maskwm/D_64bits.pth",
+    "MaskWM_provenance": "/mnt/wmcontent/GLX/icassp/MBRS/external_baselines/outputs/maskwm_validation/D_64bits/provenance.json",
+    "matched_validation_outputs": "/mnt/wmcontent/GLX/icassp/MBRS/reports/external_matched_psnr/matched_validation_outputs_512.pt"
+  },
+  "matched_validation_outputs_persisted": true,
+  "source_sha256": {
+    "Original": "60cc8b4d7a6cb9f5c0c77b3f66e02d6e0b739b05867123a6ec246ba6e4992de2",
+    "HiDDeN-64": "17b47c95f12a748acd7dd720331ac873170bc45eb590ffc4deec116163012391",
+    "MBRS crop-trained global": "31fddd342f8bd8bd003e4fbc0cf10878035b1cda81d3e10a647833aad84e5248",
+    "Ours = Hard Local-Tail + global OKLab": "4a6bfedff9d79769a364ed189fc56a947e1c1115f9c247d4a86b70c6262e1ae4",
+    "MaskWM_native_045": "1896d5204649e9338c03c5111618b5f1f44a8f7b5262cd4f241a00181a2d9c1a",
+    "MaskWM_native_020": "75ae946cb63ed49ccb08afe497b952b5c2a35a68f02b84562f6909f72fbd7bcf"
+  },
+  "generated_outputs": {
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/figure2_matched_psnr.png": "6e080bbfe5297dc9014e6a383c41b864d6ba481b0feee7492bd80d394d81bf34",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/figure2_matched_psnr.pdf": "7ec26c88a5fb63d64c8e23d7ef823b25ca81d43ac50be09e81eadbd10153e971",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/figure2_matched_psnr.pptx": "337f1c5b8615e337c43c613b8fdc2f6c48877c338c39a2837750be026fe48f16"
+  },
+  "renderer": "/root/workspace/GLX/icassp/MBRS/experiments/extend_external_matched_psnr.py",
+  "renderer_sha256": "e2b328e4f704c1138fba5f72c7ea1b6dfdec026ee780fd285026a978c80bbd9c",
+  "caption": "Matched-PSNR qualitative comparison; mean display PSNR = 40.72 dB. All four methods are shown at validation-calibrated operating points. HiDDeN-64 and MaskWM-D_64 use frozen external checkpoints with only the global residual-strength scale adjusted. Residual maps use a shared scale within each sample and are amplified \u00d710 for visualization.",
+  "project_test_used_for_target_or_selection": false
+}

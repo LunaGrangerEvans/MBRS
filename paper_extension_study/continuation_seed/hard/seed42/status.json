@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "method": "hard",
+  "seed": 42,
+  "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth",
+  "source_checkpoint_sha256": "1a82ec4f9559c5861fdcbd51ddd76b4ecce2507e7ecf8c1a7e63a9ea6cce2907",
+  "session": "cont_hard_42",
+  "gpu": 1,
+  "log": "train.log",
+  "training_log": "train.log",
+  "checkpoint": "checkpoint_0020.pth",
+  "checkpoint_sha256": "f0e62ca0dcebf7de9a35e0266b5f6eb2c09c3f5020951d8d19623687699c1409",
+  "python_pid": 121682
+}

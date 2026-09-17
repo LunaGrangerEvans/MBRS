@@ -1,0 +1,30 @@
+--- timestamp ---
+2026-09-16T07:37:58Z
+--- python ---
+Python 3.12.8
+--- torch/numpy ---
+numpy 1.26.4
+torch 2.7.0+cu126
+cuda_available True
+cuda_version 12.6
+visible_devices 2
+--- gpu ---
+0, NVIDIA A800-SXM4-80GB, 81920 MiB, 79762 MiB
+1, NVIDIA A800-SXM4-80GB, 81920 MiB, 79762 MiB
+--- source checkpoint ---
+1a82ec4f9559c5861fdcbd51ddd76b4ecce2507e7ecf8c1a7e63a9ea6cce2907  /mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth
+size_bytes=250170859
+--- deterministic config ---
+2:  "name": "global_oklab_only_seed17",
+7:  "batch_size": 16,
+9:  "epochs": 20,
+10:  "lr": 0.0001,
+11:  "seed": 17,
+12:  "noise_layers": [
+17:  "local_loss_weight": 0.0,
+18:  "local_loss_mode": "none",
+22:  "deterministic": true,
+23:  "deterministic_warn_only": false,
+24:  "require_single_gpu": true,
+26:  "global_oklab_weight": 0.059149764,
+27:  "global_oklab_version": "linear_srgb_author_matrix_v1"

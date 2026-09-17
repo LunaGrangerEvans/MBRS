@@ -4,33 +4,34 @@ The requested main-paper set is now frozen to exactly **two figures and two tabl
 
 ## Figure 1 — method framework
 
-- [PNG](figures/fig01_method_framework.png)
-- [PDF](figures/fig01_method_framework.pdf)
-- [Source](../experiments/render_four_page_main_assets.py)
+- [PNG](figures/figure1_final_method.png)
+- [PDF](figures/figure1_final_method.pdf)
+- [Source](../paper/render_fig1_final_method.py)
 
-The diagram shows `cover + message → crop-trained MBRS encoder → watermarked image`, a secondary crop/decoder message path, and the three image branches: Global RGB MSE, Hard Patch16/stride8/Top10 local-tail MSE, and optional OKLab color regularization. The visual callouts explicitly state: Global controls the mean; Hard Top10 controls the worst local tail; OKLab controls color artifacts.
+The diagram shows `cover + message → crop-trained MBRS encoder → watermarked image`, a secondary crop/decoder message path, and the three image branches: Global RGB average distortion, Hard Local-Tail upper-tail distortion, and Ours' OKLab color-aware refinement. The visual callouts explicitly state: Global controls the mean; Hard Local-Tail controls the upper tail; OKLab controls color-aware fidelity.
 
 ## Table 1 — main formal result
 
-- [LaTeX](table1_main_results.tex)
-- Source values: [main_table.csv](main_table.csv)
+- [LaTeX](tables/final_method_ablation.tex)
+- Source values: [final_ours_project_test_report.md](../reports/final_ours_project_test_report.md)
 
-The compact table keeps only Global continuation, Hard P16/S16/Top25, Hard P16/S8/Top25, and Hard P16/S8/Top10 (Ours). Columns are PSNR, SSIM, LPIPS, Top25 local PSNR, P95 MSE, Gini, and BER30.
+The compact table contains the three-row progression MBRS crop-trained global → Hard Local-Tail → Ours. Columns are PSNR, SSIM, LPIPS, Top25 local PSNR, P95 MSE, Gini, and BER30.
 
 ## Figure 2 — qualitative comparison
 
-- [PNG](figures/fig02_qualitative_comparison.png)
-- [PDF](figures/fig02_qualitative_comparison.pdf)
-- [Source](../experiments/render_four_page_main_assets.py)
+- [Editable PPTX](figures/figure2_final.pptx)
+- [PNG](figures/figure2_final.png)
+- [PDF](figures/figure2_final.pdf)
+- [Source](../paper/render_fig2_final.py)
 
-Five fixed validation samples (`0, 10, 20, 30, 40`) are arranged as rows. The four method groups are Original, Global baseline, Hard Top10, and Hard Top10 + global OKLab (`λ=0.059149764`). Each group has a full image and the same row-level 32×32 zoom; the ROI is selected once from the incumbent Hard Top10 CIEDE2000 tail and shared across methods.
+Two samples are selected from all 50 validation images using a balanced local-tail, P95, color-error, residual-clarity, and content-diversity criterion. Columns are Original, HiDDeN-64 (external), MaskWM-D_64 (external), MBRS crop-trained global, and Ours. Full, direct ROI zoom, and residual ×10 rows are shown. Ours is the frozen Hard Local-Tail + global OKLab method.
 
-## Table 2 — color extension
+## Table 2 — final color fidelity
 
-- [LaTeX](table2_color_extension.tex)
-- Sources: [crop_global_oklab_validation_candidates.csv](../reports/crop_global_oklab_validation_candidates.csv) and [local_chroma_tail_summary.csv](../reports/local_chroma_tail_summary.csv)
+- [LaTeX](tables/final_method_color.tex)
+- Source values: [final_ours_project_test_report.md](../reports/final_ours_project_test_report.md)
 
-This is explicitly validation-only. It contains Hard Top10, + Global OKLab (`λ=0.059149764`), and + Local chroma-tail, with PSNR, local PSNR, global/Top10 CIEDE2000, Gini, and BER30.
+The final color table contains the formal Hard Local-Tail and Ours rows, with PSNR, local PSNR, global/Top10 CIEDE2000, LPIPS, and BER30. The prior validation-only color-extension table remains supplementary historical evidence.
 
 ## Four-page order
 

@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python3 paper_extension_study/operating_curve/run_operating_curve.py --alpha-grid paper_extension_study/operating_curve/FROZEN_ALPHA_GRID.txt --output-dir paper_extension_study/operating_curve --device cuda --batch-size 16

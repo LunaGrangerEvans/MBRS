@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1 python3 paper_extension_study/component_ablation/evaluate_component.py --checkpoint paper_extension_study/continuation_seed/ours/seed42/checkpoint_0020.pth --output-dir paper_extension_study/continuation_seed/ours/seed42 --device cuda --batch-size 16

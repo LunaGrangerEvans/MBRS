@@ -1,0 +1,24 @@
+{
+  "hostname": "aibox-r24f7f639b19-8576589855-dpppp",
+  "python": "3.12.8",
+  "platform": "Linux-5.15.0-72-generic-x86_64-with-glibc2.35",
+  "cpu": "x86_64",
+  "torch": "2.7.0+cu126",
+  "cuda_version": "12.6",
+  "cudnn_version": 90501,
+  "cuda_device": "NVIDIA A800-SXM4-80GB",
+  "cuda_device_count_visible": 1,
+  "precision": "float32; autocast disabled",
+  "batch_shape": [
+    16,
+    3,
+    128,
+    128
+  ],
+  "payload_length": 64,
+  "warmup_iterations": 20,
+  "measured_iterations": 100,
+  "deterministic_training_path": true,
+  "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth",
+  "validation_manifest": "/mnt/wmcontent/GLX/icassp/MBRS/reports/content_selector/validation_manifest.pt"
+}

@@ -84,3 +84,10 @@ paper/figures
 Thumbs.db
 .idea/
 .vscode/
+
+# Codex orchestration and transient experiment process state
+.omx/
+**/.omx/
+**/pid.txt
+**/python_pid.txt
+**/tmux_session.txt

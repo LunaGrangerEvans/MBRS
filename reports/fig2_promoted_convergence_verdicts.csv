@@ -1,0 +1,9 @@
+run,method,condition,epochs_evaluated,tail_psnr_span_db,tail_local_psnr_span_db,plateau_threshold_db,convergence_verdict,note
+promoted_ours-base_wmsg80,Ours-base,promoted_wmsg80,"5,10,15,20",2.4490130033240263,2.751865904551341,0.15,not_demonstrated,Operational validation plateau criterion; not proof of optimizer convergence.
+promoted_ours_wmsg80,Ours,promoted_wmsg80,"5,10,15,20",1.5823142438567892,1.5679808164846776,0.15,not_demonstrated,Operational validation plateau criterion; not proof of optimizer convergence.
+promoted_ours-base_wmsg40,Ours-base,promoted_wmsg40,"5,10,15,20",1.2381507319911051,1.4866052999380237,0.15,not_demonstrated,Operational validation plateau criterion; not proof of optimizer convergence.
+promoted_ours_wmsg40,Ours,promoted_wmsg40,"5,10,15,20",1.379106753943347,1.3380679169733227,0.15,not_demonstrated,Operational validation plateau criterion; not proof of optimizer convergence.
+promoted_ours-base_wmsg20,Ours-base,promoted_wmsg20,"5,10,15,20",0.7901088670162437,0.7511762239070379,0.15,not_demonstrated,Operational validation plateau criterion; not proof of optimizer convergence.
+promoted_ours_wmsg20,Ours,promoted_wmsg20,"5,10,15,20",1.0954174389669689,1.2493840084206909,0.15,not_demonstrated,Operational validation plateau criterion; not proof of optimizer convergence.
+promoted_ours-base_reference,Ours-base,promoted_reference,"5,10,15,20",1.0985409974419724,1.3195649240307077,0.15,not_demonstrated,Operational validation plateau criterion; not proof of optimizer convergence.
+promoted_ours_reference,Ours,promoted_reference,"5,10,15,20",0.6176926787884014,0.6321461012184102,0.15,not_demonstrated,Operational validation plateau criterion; not proof of optimizer convergence.

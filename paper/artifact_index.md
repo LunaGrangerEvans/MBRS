@@ -47,10 +47,20 @@ These files contain outputs of existing checkpoints, not newly trained weights.
 - FigS1 external reference: [PNG](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/figS1_external_reference.png), [PDF](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/figS1_external_reference.pdf)
 - [render provenance](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/provenance.json)
 
-## Compact two-figure main-body assets
+## Superseded compact two-figure assets
 
 - Figure 1 method framework: [PNG](figures/fig01_method_framework.png), [PDF](figures/fig01_method_framework.pdf)
 - Figure 2 qualitative comparison: [PNG](figures/fig02_qualitative_comparison.png), [PDF](figures/fig02_qualitative_comparison.pdf)
 - [Local render provenance](figures/provenance.json)
 
-Fig2 reuses the existing predetermined RGB panels; it was not regenerated. Its source paths are listed in [figure_plan.md](figure_plan.md).
+These are historical pre-freeze assets. The current camera-ready assets are listed below and are generated from the frozen final-method outputs.
+
+## Frozen final-method assets
+
+- [Frozen configuration](../reports/final_method_frozen_config.md)
+- [One-pass formal project-test report](../reports/final_ours_project_test_report.md)
+- [Expanded formal per-image CSV](../reports/final_ours_project_test_per_image.csv)
+- [External-baseline audit](../reports/final_external_baseline_audit.md)
+- Figure 1 final method: [PNG](figures/figure1_final_method.png), [PDF](figures/figure1_final_method.pdf)
+- Figure 2 final comparison: [PNG](figures/figure2_final.png), [PDF](figures/figure2_final.pdf), [editable PPTX](figures/figure2_final.pptx)
+- Final table fragments: [ablation](tables/final_method_ablation.tex), [color](tables/final_method_color.tex)

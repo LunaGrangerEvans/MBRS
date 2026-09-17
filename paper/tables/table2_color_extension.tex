@@ -1,0 +1,20 @@
+% VALIDATION ONLY. Generated from locked validation artifacts; requires \usepackage{booktabs}.
+\begin{table*}[t]
+  \centering
+  \caption{\textbf{VALIDATION ONLY.} Color-aware extension on the fixed 50-image validation manifest. Global OKLab gives the strongest absolute color-fidelity improvement, whereas local chroma-tail better preserves the concentration benefit of Hard Top-10\%.}
+  \label{tab:color_extension}
+  \scriptsize
+  \setlength{\tabcolsep}{3.5pt}
+  \renewcommand{\arraystretch}{1.10}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrr@{}}
+    \toprule
+    Method & PSNR $\uparrow$ & Top-25 local PSNR $\uparrow$ & Global CIEDE2000 $\downarrow$ & Top-10 CIEDE2000 $\downarrow$ & Gini $\downarrow$ & BER@30\% $\downarrow$ \\
+    \midrule
+    Hard Top-10\% & 36.4106 & 35.6530 & 3.5986 & 5.2303 & \textbf{0.09457} & 0.11100 \\
+    \quad + Global OKLab ($\lambda_{\mathrm{OK}}=0.059149764$) & \textbf{36.8182} & \textbf{36.0323} & \textbf{3.3650} & \textbf{4.9206} & 0.10002 & \textbf{0.11081} \\
+    \quad + Local chroma-tail ($\lambda_{\mathrm{chr}}=0.014221079$) & 36.5359 & 35.7769 & 3.5334 & 5.1320 & 0.09526 & 0.11094 \\
+    \bottomrule
+  \end{tabular*}
+  \vspace{2pt}
+  \parbox{\textwidth}{\scriptsize These rows are development-validation evidence and are not part of the formal-test comparison in Table I.}
+\end{table*}

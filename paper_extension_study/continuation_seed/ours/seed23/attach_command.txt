@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 tmux attach -t cont_ours_23

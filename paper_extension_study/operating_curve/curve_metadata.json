@@ -1,0 +1,27 @@
+{
+  "alpha_grid_file": "paper_extension_study/operating_curve/FROZEN_ALPHA_GRID.txt",
+  "alpha_grid_sha256": "7279092b890fb55b4c0af03f277797561615c0f8c61341717f8784f88b5dd25e",
+  "alpha_values": [
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.925,
+    0.95,
+    0.975,
+    1.0
+  ],
+  "validation_manifest": "/mnt/wmcontent/GLX/icassp/MBRS/reports/content_selector/validation_manifest.pt",
+  "validation_masks": "/mnt/wmcontent/GLX/icassp/MBRS/reports/crop_global_oklab/validation_crop_masks.pt",
+  "project_test_manifest": "/mnt/wmcontent/GLX/icassp/MBRS/reports/uniform_eval_manifest.pt",
+  "project_test_crop_extension": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_crop35_40_manifest.pt",
+  "checkpoints": {
+    "MBRS crop-trained global": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_global_continuation/checkpoint_0020.pth",
+    "Ours": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/seed17_crop_hard16_stride8_top10_global_oklab_g25/checkpoint_0020.pth"
+  },
+  "project_test_used_to_choose_alpha_grid": false,
+  "retraining": false,
+  "quality_space": "native 128x128 clipped RGB",
+  "ber_unit": "image-level aggregate of fixed 5-repeat 64-bit masks"
+}

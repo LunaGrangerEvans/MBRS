@@ -1,0 +1,8 @@
+{
+  "status": "reused_frozen",
+  "method": "ours",
+  "seed": 17,
+  "source_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/optimization_global_seed17_128_m64_crop/checkpoint_0100.pth",
+  "source_checkpoint_sha256": "1a82ec4f9559c5861fdcbd51ddd76b4ecce2507e7ecf8c1a7e63a9ea6cce2907",
+  "existing_frozen_checkpoint": "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/seed17_crop_hard16_stride8_top10_global_oklab_g25/checkpoint_0020.pth"
+}

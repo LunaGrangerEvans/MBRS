@@ -1,0 +1,40 @@
+comparison,first_method,second_method,difference,metric,direction,n_images,n_bootstrap,analysis_seed,observed_mean_difference,ci_2_5_percentile,ci_97_5_percentile,bootstrap_standard_error,ci_crosses_zero
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,PSNR,higher_is_better,50,20000,20260916,0.5969532334288045,0.5588648045361944,0.6401762819976873,0.020779177725584127,False
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,Top-25 Local PSNR,higher_is_better,50,20000,20260916,0.6196820096175115,0.5791322800183594,0.6642271269380187,0.021898681450789048,False
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,P95 patch MSE,lower_is_better,50,20000,20260916,-3.9660638067289254e-05,-4.334515075061063e-05,-3.6206152693921464e-05,1.8309722777405607e-06,False
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,P99 patch MSE,lower_is_better,50,20000,20260916,-4.172629506501835e-05,-4.5867185741735726e-05,-3.781528062609142e-05,2.057367399903417e-06,False
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,LPIPS,lower_is_better,50,20000,20260916,-0.000432485252385959,-0.0005570548644755035,-0.0003417528033314739,5.568992090542451e-05,False
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,Global CIEDE2000,lower_is_better,50,20000,20260916,-0.2817660593986511,-0.3052513881921768,-0.2619627906680107,0.011109017839132826,False
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,Top10 CIEDE2000,lower_is_better,50,20000,20260916,-0.386875057220459,-0.41571537816524506,-0.36114143943786625,0.013933678504410294,False
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,Gini,lower_is_better,50,20000,20260916,-0.002876527102699526,-0.004419131231309576,-0.001287979279086918,0.0008023871210872338,False
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,BER100,lower_is_better,50,20000,20260916,0.0,0.0,0.0,0.0,True
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,BER70,lower_is_better,50,20000,20260916,0.0,0.0,0.0,0.0,True
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,BER50,lower_is_better,50,20000,20260916,6.25e-05,0.0,0.00018750000000000003,6.168517733349324e-05,True
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,BER40,lower_is_better,50,20000,20260916,6.250000000000006e-05,-0.0003124999999999998,0.00043750000000000006,0.00018655969907730872,True
+global_vs_ours,MBRS crop-trained global,Ours,Ours - MBRS crop-trained global,BER30,lower_is_better,50,20000,20260916,-1.3877787807814458e-18,-0.0005000000000000019,0.0005624999999999977,0.00026634723239508153,True
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,PSNR,higher_is_better,50,20000,20260916,0.16596063867139166,0.12423016077587533,0.21254857997538879,0.022587097895614944,False
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,Top-25 Local PSNR,higher_is_better,50,20000,20260916,0.23216308497656968,0.18952714079857938,0.27835509452482987,0.022560369699632255,False
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,P95 patch MSE,lower_is_better,50,20000,20260916,-1.7198049899889156e-05,-2.0946275573805907e-05,-1.369556879217271e-05,1.8533021385267222e-06,False
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,P99 patch MSE,lower_is_better,50,20000,20260916,-1.8885839352151378e-05,-2.3069973719975675e-05,-1.496661917663004e-05,2.0733633142304442e-06,False
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,LPIPS,lower_is_better,50,20000,20260916,-0.00013442080002278088,-0.00022653559996979312,-6.09110946534202e-05,4.230225245159738e-05,False
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,Global CIEDE2000,lower_is_better,50,20000,20260916,-0.05106699228286743,-0.07426165884733199,-0.031783710658550283,0.010948674046917507,False
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,Top10 CIEDE2000,lower_is_better,50,20000,20260916,-0.08343797206878661,-0.11320629429817199,-0.05793875813484193,0.014063524241100368,False
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,Gini,lower_is_better,50,20000,20260916,-0.008109840280679263,-0.009682092202146447,-0.006609909774918387,0.0007913311295117632,False
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,BER100,lower_is_better,50,20000,20260916,0.0,0.0,0.0,0.0,True
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,BER70,lower_is_better,50,20000,20260916,0.0,0.0,0.0,0.0,True
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,BER50,lower_is_better,50,20000,20260916,6.25e-05,0.0,0.00018750000000000003,6.143041201810008e-05,True
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,BER40,lower_is_better,50,20000,20260916,0.00018749999999999995,-0.00018750000000000025,0.0005625000000000002,0.00018622082270298868,True
+global_vs_hard,MBRS crop-trained global,Hard Local-Tail,Hard Local-Tail - MBRS crop-trained global,BER30,lower_is_better,50,20000,20260916,-0.00018750000000000044,-0.0007500000000000001,0.0003749999999999998,0.0002859608439387302,True
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,PSNR,higher_is_better,50,20000,20260916,0.43099259475741275,0.4083835814900534,0.4521524485367112,0.011121426521005184,False
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,Top-25 Local PSNR,higher_is_better,50,20000,20260916,0.38751892464094184,0.3627249419460794,0.4107098202021601,0.012264826096358468,False
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,P95 patch MSE,lower_is_better,50,20000,20260916,-2.24625881674001e-05,-2.3159790189311024e-05,-2.178167170677625e-05,3.5464919440939517e-07,False
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,P99 patch MSE,lower_is_better,50,20000,20260916,-2.2840455712866973e-05,-2.3626271496323175e-05,-2.206287174012688e-05,3.9928277285247107e-07,False
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,LPIPS,lower_is_better,50,20000,20260916,-0.0002980644523631781,-0.00036160570968058896,-0.00023713945999043068,3.176147452623553e-05,False
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,Global CIEDE2000,lower_is_better,50,20000,20260916,-0.2306990671157837,-0.24543162548542022,-0.215594789147377,0.007631394718771018,False
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,Top10 CIEDE2000,lower_is_better,50,20000,20260916,-0.30343708515167234,-0.3201179864406586,-0.2851440615653992,0.008982281574115993,False
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,Gini,lower_is_better,50,20000,20260916,0.005233313177979736,0.004070654444450309,0.006563311445779481,0.0006313556631078683,False
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,BER100,lower_is_better,50,20000,20260916,0.0,0.0,0.0,0.0,True
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,BER70,lower_is_better,50,20000,20260916,0.0,0.0,0.0,0.0,True
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,BER50,lower_is_better,50,20000,20260916,0.0,-0.00018750000000000003,0.00018750000000000003,8.805873379676358e-05,True
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,BER40,lower_is_better,50,20000,20260916,-0.0001249999999999999,-0.0005625000000000002,0.0003750000000000001,0.0002342699131462421,True
+hard_vs_ours,Hard Local-Tail,Ours,Ours - Hard Local-Tail,BER30,lower_is_better,50,20000,20260916,0.00018749999999999906,-0.0004375000000000001,0.0008124999999999982,0.0003103571291755931,True

@@ -1,0 +1,90 @@
+{
+  "scope": "fixed 50-image validation only",
+  "native_rendering": "directly from clipped float tensors; no baked montage",
+  "selection_warning": "sample and ROI are both best-case selected for Ours-base minus Ours local MSE improvement; non-representative",
+  "method_status": {
+    "Ours-base": "controlled internal baseline",
+    "Ours": "formal main method",
+    "Ours + OKLab": "validation-only extension; complete gate not passed"
+  },
+  "selected_native": [
+    {
+      "image_id": "0805",
+      "roi_mse_improvement": 4.007171810371801e-05,
+      "rank": 1,
+      "validation_index": 4,
+      "roi_x": 36,
+      "roi_y": 52,
+      "roi_size": 32
+    },
+    {
+      "image_id": "0844",
+      "roi_mse_improvement": 6.034363468643278e-05,
+      "rank": 2,
+      "validation_index": 43,
+      "roi_x": 28,
+      "roi_y": 24,
+      "roi_size": 32
+    }
+  ],
+  "selected_color": [
+    {
+      "image_id": "0814",
+      "validation_index": 13,
+      "roi_x": 92,
+      "roi_y": 44,
+      "roi_size": 32,
+      "delta_top10_ciede2000": 0.2613048553466797
+    },
+    {
+      "image_id": "0838",
+      "validation_index": 37,
+      "roi_x": 52,
+      "roi_y": 92,
+      "roi_size": 32,
+      "delta_top10_ciede2000": 0.22986698150634766
+    }
+  ],
+  "selected_equal_alpha": 1.5,
+  "decoder_evaluation": "real per-method checkpoint decoders; crop uses five frozen repeats; Gaussian fixed seeds; JPEG Pillow round trip",
+  "source_sha256": {
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/content_selector/validation_manifest.pt": "60cc8b4d7a6cb9f5c0c77b3f66e02d6e0b739b05867123a6ec246ba6e4992de2",
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/crop_global_oklab/validation_crop_masks.pt": "e592df12eecacd2ea81bf98c55b78f7011bbb6a8eb38898adb712969fa2efe7b",
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/crop_global_oklab/validation_seed17_crop_hard16_stride8_top10_global_oklab_g12p5/provenance.json": "8e2faa09ae34d6ed69b60d615f5b53722144a8c9db9438e18e0871678995dc0d",
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/crop_global_oklab/validation_seed17_crop_hard16_stride8_top10_global_oklab_g12p5/controlled_seed17_global_continuation_outputs.pt": "4fdc5336969b7639aab6c93ab6940f81ce644e158a46aeff6bca210a1f620abb",
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/crop_global_oklab/validation_seed17_crop_hard16_stride8_top10_global_oklab_g12p5/controlled_seed17_hard_patch16_stride8_top10_global_weight50_local_weight50_outputs.pt": "cc2071137011c0df7c09378561298edff571446f4b854adf487a21bb942a21c7",
+    "/mnt/wmcontent/GLX/icassp/MBRS/reports/crop_global_oklab/validation_seed17_crop_hard16_stride8_top10_global_oklab_g12p5/seed17_crop_hard16_stride8_top10_global_oklab_g12p5_outputs.pt": "b1bfda36d16ec3e7160575678c446601c5ca019576a3e1ccb3c1819e018f591b",
+    "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_global_continuation/checkpoint_0020.pth": "31fddd342f8bd8bd003e4fbc0cf10878035b1cda81d3e10a647833aad84e5248",
+    "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_hard_patch16_stride8_top10_global_weight50_local_weight50/checkpoint_0020.pth": "74fd12a6147b20e68477d9439cf6c416181bc48f07cfa3c3384989f48850f92c",
+    "/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/seed17_crop_hard16_stride8_top10_global_oklab_g12p5/checkpoint_0020.pth": "e2847537921565edef747fda7a9eb82e06976ed77624988faa8e7a28b003098c"
+  },
+  "output_sha256": {
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_A_native.pdf": "f6f011b4a3986dc061e25db8304d490127ae74429437b2ab1a3851d147f609b9",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_A_native.png": "0293f3c6754fd156e837b80363be4362f772d68b9b445014d9342ba4d07f06db",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_A_native.pptx": "49244eac29f63e483202643e5361bfbb9939b2196dd52039d412056ba76b8d27",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_B_strength_stress.pdf": "f547c34c5767df724e6c7db6899d315886fd3c7d12f948f68dccc22826875667",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_B_strength_stress.png": "329d0e71d1cd1acd546f47e22dcd0e958b523f6f9b4c858d9d539a7f1b794af2",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_B_strength_stress.pptx": "43560d4b2df207d4881812f2ef17f6339d09a91f479c5e4eeb311fbff716cbf4",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_C_residual.pdf": "9e381e2f9d64e5ed77a0e8722f8c36a7f29f14cd3baab17312ec33c58dfc9a5f",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_C_residual.png": "5b756004202fa8f6666e788258548209a0632d4f378b1acc73832849a065af3b",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_C_residual.pptx": "251ae3a8c3dcc89af239980291027ac9353325b1cfae5364f566cdbf4d1ca05f",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_D_heatmap.pdf": "a8581329ea0f2f15bcce4982af6b7451a7a3bea44cef8161ef1be2c626da00ef",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_D_heatmap.png": "8077bd8498a91b4186d99e08cc6b1d6de8a629655d10e577ef6dcea5b9997ea1",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_D_heatmap.pptx": "ec02325c2e38d242222faa3c2344b61eddb41e96f6e9ea63da01a2c324d8bfbe",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_E_color.pdf": "8509d87a8a814306b678d3083235a7570b83464a67339b25d6c341a96d3d0577",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_E_color.png": "32b2ad6359a590bc5ba0442ba7208694d2cb20954e80bf918498c57d54c4f72c",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_E_color.pptx": "fb4fc86c227a99dc69aca1e3f2440dca43c5d52a6e9d6aaf2895b1793cd3ef46",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_final.pdf": "07c53fed8e8a0f46dc0cf9a0f473849948567a927b15f063f6d9e4117569865d",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_final.png": "cbaa9ecce162aaa63106dc44f1eac925e2325035b0cc2e56b514be7f90a2525e",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_final.pptx": "fe6bbceb2f50d1ba907047161f8196cead03109542b45c5e8cdae4fa84dbd180",
+    "/root/workspace/GLX/icassp/MBRS/paper/figures/fig2_final_editable.pptx": "fe6bbceb2f50d1ba907047161f8196cead03109542b45c5e8cdae4fa84dbd180",
+    "/root/workspace/GLX/icassp/MBRS/reports/fig2_attack_stress_summary.csv": "0fed3de8a520d3927bc5f560a96ae225fef154f2c67886d2562c17ddfddcc66a",
+    "/root/workspace/GLX/icassp/MBRS/reports/fig2_candidate_ranking.csv": "2d4493368df69af8658a247cfe957c556966608e2245558f70c95fc15d829e29",
+    "/root/workspace/GLX/icassp/MBRS/reports/fig2_candidate_summary.md": "ad3f4bbdcdab5b5e2fe9ba4762b370f83e6ed961eeaec6bc388cad476271b5d8",
+    "/root/workspace/GLX/icassp/MBRS/reports/fig2_color_candidate_ranking.csv": "7fcf26939f59bcb4068929cea0af5dc7cb3e60cb1caee2040c62a0326fc58198",
+    "/root/workspace/GLX/icassp/MBRS/reports/fig2_final_selection.md": "2ed97ff46e3995c0f425c272cdb73f137ec5df590ce866c67c1494c0b1e4f40c",
+    "/root/workspace/GLX/icassp/MBRS/reports/fig2_strength_sweep.csv": "73c2bdc3418321c8c5ea477171aa754ebfa6b46338a37905fa0f8d27221e0fee",
+    "/root/workspace/GLX/icassp/MBRS/reports/fig2_top10_contact_sheet.png": "9c29a79bb46d8cdd6e02f3df08060178a0d830a136cb5ccc85cda59fdb0957e8"
+  },
+  "script_sha256": "5f08ac1ebb53fb591535f5ac3368f47e7de6aa90ebb7e414203adcb0b985ecdb"
+}

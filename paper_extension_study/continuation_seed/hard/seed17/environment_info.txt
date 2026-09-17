@@ -1,0 +1,8 @@
+--- reused endpoint environment ---
+2026-09-16T09:40:08Z
+Python 3.12.8
+numpy 1.26.4
+torch 2.7.0+cu126
+cuda 12.6
+visible_devices 2
+existing_frozen_checkpoint=/mnt/wmcontent/GLX/icassp/MBRS/experiments/runs/controlled_seed17_hard_patch16_stride8_top10_global_weight50_local_weight50/checkpoint_0020.pth

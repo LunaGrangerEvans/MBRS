@@ -1,0 +1,29 @@
+{
+  "input": "/root/workspace/GLX/icassp/MBRS/paper_extension_study/factorial_component/factorial_input_per_image.csv",
+  "n_images": 50,
+  "n_bootstrap": 20000,
+  "analysis_seed": 20260916,
+  "unit_of_resampling": "paired image index",
+  "psnr_estimator": "10*log10(1 / mean_i(global_mse_i)) per bootstrap replicate",
+  "metrics": [
+    "PSNR",
+    "Top-25 Local PSNR",
+    "P95 MSE",
+    "P99 MSE",
+    "LPIPS",
+    "Global CIEDE2000",
+    "Top10 CIEDE2000",
+    "Gini",
+    "BER30"
+  ],
+  "effects": {
+    "OKLab_without_Tail": "M01 - M00",
+    "OKLab_with_Tail": "M11 - M10",
+    "Tail_without_OKLab": "M10 - M00",
+    "Tail_with_OKLab": "M11 - M01",
+    "interaction": "M11 - M10 - M01 + M00"
+  },
+  "individual_bits_are_not_bootstrap_units": true,
+  "project_test_used_for_selection": false,
+  "paper_bundle_unchanged": true
+}

@@ -2,9 +2,9 @@
 
 > The current four-page main-body selection is the compact two-figure/two-table set in [figure_table_plan_4page.md](figure_table_plan_4page.md) and [four_page_main_layout.md](four_page_main_layout.md). This file preserves the broader five-figure/supplementary evidence freeze for provenance and is not the active main-body layout.
 
-Final asset audit: 2026-09-10. Scope: MBRS project-owned evidence only. **Figs. 1–5 and S1 are ready for drafting, pending print-size layout checks.** Selected numerical figures were refreshed using [render_paper_freeze.py](/root/workspace/GLX/icassp/MBRS/experiments/render_paper_freeze.py), following the unified checkpoint reevaluation. The figure audit independently checked the outputs and captions. No training was performed. JPEG+OKLab is excluded.
+Final asset audit: 2026-09-15. Scope: MBRS project-owned evidence only. **The frozen final method is Ours = Hard Local-Tail + global OKLab.** Figs. 1–5 and S1 remain ready for drafting, pending print-size layout checks; Figure 1 and Figure 2 were regenerated from the one-pass final-method freeze. JPEG+OKLab is excluded.
 
-The main comparison is Global continuation versus Hard Patch16 / stride8 / Top10% raw-MSE selection, global/local weights 0.5/0.5. Both are seed17 continuation epoch20. The eight frozen configurations remain in the main/ablation tables; primary figures emphasize Global and Hard Top10. TrustMark is supplemental REFERENCE evidence.
+The final comparison is MBRS crop-trained global → Hard Local-Tail → Ours, with Ours adding frozen global OKLab regularization (`lambda_OK=0.059149764`) to the P16/S8/Top10 hard-tail objective. All three are seed17 epoch20 controlled rows from the one-pass formal project-test evaluation. TrustMark is supplemental REFERENCE evidence.
 
 ## 1. Final selected assets and readiness
 
@@ -13,7 +13,7 @@ These are actual existing assets, not proposed filenames. Prefer the PDFs for ty
 | Slot | Final content | Selected files | Status |
 |---|---|---|---|
 | Fig. 1 | Method: encoder–mask–decoder, global/local losses, 23/225 training selection, separate evaluation grid | [PNG](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/fig01_method.png) · [PDF](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/fig01_method.pdf) | Ready for drafting; print-size check pending |
-| Fig. 2 | Predetermined 7/20/42 actual-RGB examples, each a 3×3 block | [07 PNG](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/artifact_observation/actual_rgb_test_07.png) · [20 PNG](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/artifact_observation/actual_rgb_test_20.png) · [42 PNG](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/artifact_observation/actual_rgb_test_42.png) · [three-page PDF](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/artifact_observation/artifact_observation_main.pdf) | Ready for drafting; arrange the existing three sample blocks at print size |
+| Fig. 2 | Two fixed validation samples, each a 5×3 block: full image, shared-ROI zoom, and local-error heatmap | [PNG](figures/figure2_final.png) · [PDF](figures/figure2_final.pdf) · [editable PPTX](figures/figure2_final.pptx) | Rendered; print-size check pending |
 | Fig. 3 | Three panels: globalPSNR / localPSNR / BER at 30,40,50,70,100% | [PNG](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/fig03_quality_robustness.png) · [PDF](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/fig03_quality_robustness.pdf) | Ready for drafting; print-size check pending |
 | Fig. 4 | Two panels: mean per-image Lorenz curve / paired Gini | [PNG](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/fig04_concentration.png) · [PDF](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/fig04_concentration.pdf) | Ready for drafting; clipped native32 values verified |
 | Fig. 5 | Two panels: signed P95 MSE / Top10 LPIPS deltas for all 50 image indices | [PNG](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/fig05_pixel_perceptual.png) · [PDF](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/paper_freeze_v1/fig05_pixel_perceptual.pdf) | Ready for drafting; 96%/62% and mixed LPIPS outcome verified |
@@ -84,45 +84,40 @@ Use these exact definitions throughout Figs. 3–5:
 
 Global and Top10 have approximately 0.774% and 0.764% out-of-range encoded channel values before display clipping. Consequently, dividing legacy MSE by four is insufficient to reproduce clipped metrics. Re-evaluate or use the existing clipped CSVs. Ratios and rankings can also change after clipping.
 
-## 3. Fig. 1 — method
+## 3. Fig. 1 — frozen final-method framework
 
-Use the final `fig01_method` PNG/PDF linked above. The renderer now explicitly shows the clean encoder output, rectangle-mask channel, decoder scores, training-only local branch, and separate native32 evaluation grid. This replaces the older stride16/Top25 SVG.
+Use `figure1_final_method.png` and `figure1_final_method.pdf`. The renderer explicitly shows the clean encoder output, training-time crop channel, decoder/message path, and the three final training-loss branches. This replaces the older validation-only alternatives diagram.
 
-The upper lane is host plus 64-bit message → encoder → clean output → rectangle mask → decoder scores/message MSE. The lower lane compares clean output with host, computes global MSE and overlapping patch scores, and forms the objective. Losses operate before the attack; local selection adds no inference module.
+The upper lane is host plus 64-bit message → encoder → watermarked image → training-time crop channel → decoder/message recovery. The lower lane compares clean output with host through global RGB, Hard Local-Tail, and global OKLab fidelity branches. All three are training losses; no additional inference module is introduced.
 
-Verified against the [selected config](/root/workspace/GLX/icassp/MBRS/experiments/config_controlled_seed17_hard_patch16_stride8_top10_global_weight50_local_weight50_128_m64.json), [loss implementation](/root/workspace/GLX/icassp/MBRS/experiments/losses.py), and [training source](/root/workspace/GLX/icassp/MBRS/experiments/train_local_patch.py):
+Verified against the [frozen final config](/root/workspace/GLX/icassp/MBRS/reports/final_method_frozen_config.md), [loss implementation](/root/workspace/GLX/icassp/MBRS/experiments/losses.py), and [training source](/root/workspace/GLX/icassp/MBRS/experiments/train_local_patch.py):
 
 - A 128×128 input produces a 15×15 grid of overlapping 16×16 patches at stride8: 225 scores.
 - Ceiling-rounded Top10 selects `ceil(225×0.10)=23` scores.
-- Main objective: `10 L_message + 0.5 L_global + 0.5 L_tail`; control: `10 L_message + L_global`.
+- Final objective: `w_msg L_msg + w_g L_RGB + w_t L_tail + lambda_OK L_OKLab`, with frozen `lambda_OK=0.059149764`; exact numeric weights are in the frozen configuration report.
 - “RGB MSE” in this training schematic refers to the original normalized RGB-tensor training objective. It does not introduce the later evaluation-only clipping step.
 - Selected overlapping patches do not imply exactly 10% unique pixel coverage.
 
 **Exact caption:**
 
-> Figure 1. Fine-grained overlapping hard-tail supervision for crop-robust watermarking. The encoder embeds a 64-bit message in a 128×128 RGB host, and the decoder estimates message scores after a rectangular mask channel. During training, the clean encoded image and host define global image MSE and 225 overlapping 16×16 patch-MSE scores at stride8. The local loss averages the 23 highest scores, corresponding to ceiling-rounded Top10% selection. The main objective is 10 times message MSE plus 0.5 times global image MSE plus 0.5 times local-tail MSE; the Global continuation control uses global image MSE with coefficient1 and no local term. The local branch is training-only. Evaluation separately uses sixteen non-overlapping 32×32 patches.
+> Figure 1. Frozen final-method framework for crop-robust watermarking. The encoder embeds a 64-bit message in a 128×128 RGB host, and the decoder estimates message scores after the training-time crop channel. The final objective combines message recovery, global RGB reconstruction, Hard Local-Tail supervision over the 23 highest-error patches among 225 P16/S8 candidates, and global OKLab color-aware fidelity with frozen lambda 0.059149764. The three fidelity branches are training losses only; no additional inference module is introduced. Evaluation uses fixed clipped-RGB quality and rectangle-mask BER protocols.
 
 **Layout check:** Keep the training-only note, 23/225 count, and evaluation-grid note legible after reduction. Decoder scores are correctly unbounded by a claimed sigmoid; BER uses threshold0.5. No method-data correction remains pending.
 
-## 4. Fig. 2 — predetermined actual-RGB examples
+## 4. Fig. 2 — final qualitative comparison
 
-Reuse the existing RGB files in Section 1, without regenerating or altering their pixels. Preserve sample order **7 → 20 → 42**. Each sample has a 3×3 grid: columns Original / Global continuation / Hard Top10; rows full128×128 / low-texture32×32 crop / high-texture32×32 crop. The PDF contains one page per sample, not an already assembled single-page figure. Use these blocks as subfigures (a–c).
+The final Figure 2 is selected exclusively from the fixed 50-image validation manifest after formal acceptance of the frozen g25 method. Selection is documented in [final_figure2_selection.md](../reports/final_figure2_selection.md); external identities and preprocessing are documented in [final_external_baseline_audit.md](../reports/final_external_baseline_audit.md).
 
-| Manifest index | Content descriptor, not source filename | Low-texture top-left (x,y) | High-texture top-left (x,y) |
-|---:|---|---|---|
-| 7 | Snow, skier, dark clothing | (96,64) | (64,64) |
-| 20 | Sand, crocodile, shadow edges | (64,96) | (32,64) |
-| 42 | Sky, pyramid, foreground edges | (0,0) | (96,96) |
-
-Coordinates are measured from the upper-left corner of the native128×128 view; all ROIs are32×32. The [RGB renderer](/root/workspace/GLX/icassp/MBRS/experiments/render_artifact_observation.py) selects the minimum/maximum original luminance variance among sixteen non-overlapping32×32 blocks, with row-major tie breaking. Luminance uses displayed-original RGB and weights [0.299,0.587,0.114]. Neither model output nor measured improvement enters the ROI selection. “Low/high texture” is a variance proxy, not artifact severity.
-
-The [RGB provenance](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/artifact_observation/provenance.json) supplies all50 coordinates and checkpoint hashes. [Native RGB files](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/artifact_observation/native_rgb), [all-50-image HTML](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/artifact_observation/artifact_observation.html), [auxiliary Top25/Gradient panel](/mnt/wmcontent/GLX/icassp/MBRS/visualizations/artifact_observation/artifact_observation_supplement.png), and [observation guide](/root/workspace/GLX/icassp/MBRS/reports/artifact_observation_guide.md) remain supplementary inspection resources. Preserve the predetermined examples even when the method differences are subtle.
+- Samples and ROIs: selected from all 50 validation images using a balanced local-PSNR, P95, color-error, residual-clarity, and content-diversity criterion; exact IDs/coordinates are in the selection report.
+- Columns: Original / HiDDeN-64 (external) / MaskWM-D_64 (external) / MBRS crop-trained global / Ours.
+- Rows per sample: full image, direct ROI zoom, and local-error heatmap.
+- Local-error heatmaps show mean absolute RGB difference inside the shared ROI, amplified ×10 for visibility with one shared color range per sample; the Original column is marked `—`. External methods are reference baselines, not strict matched-protocol evidence.
 
 **Exact caption:**
 
-> Figure 2. Actual RGB outputs on predetermined formal-test indices7,20, and42, shown in that order. Within each sample, columns show the original, Global continuation, and Hard Top10; rows show the full128×128 view and the same low- and high-texture32×32 regions across methods. Regions are selected solely by minimum and maximum original-image luminance variance on a non-overlapping32×32 grid, with row-major tie breaking. Images are converted by clip((x+1)/2,0,1), rounded to8-bit RGB, and enlarged with nearest-neighbor interpolation. No residual amplification, sharpening, or contrast adjustment is applied. The examples illustrate actual outputs and visible differences, not consistent human-perceptual superiority of Hard Top10.
+> Figure 2. Qualitative comparison on fixed validation samples. External methods use their respective released/retrained inference protocols and are included as reference baselines rather than strictly matched training comparisons. Red boxes indicate shared ROIs. Local-error heatmaps show mean absolute RGB difference inside the shared ROI, amplified ×10 for visibility with one shared color range per sample; the Original column is not applicable. Ours denotes the proposed Hard Local-Tail model with OKLab color-aware regularization.
 
-**Layout check:** Preserve coordinates, pixel levels, nearest-neighbor interpolation, and method order. Check three-block legibility at the final two-column width and retain a native-scale viewing reference in the supplement. No real-browser rendering of the HTML is claimed; the static figures are the drafting assets.
+**Assets:** [PNG](figures/figure2_final.png), [PDF](figures/figure2_final.pdf), [editable PPTX](figures/figure2_final.pptx), and [renderer](../paper/render_fig2_final.py).
 
 ## 5. Fig. 3 — global quality, localPSNR, and BER
 

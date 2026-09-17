@@ -1,0 +1,21 @@
+% Generated from paper-freeze-v1; requires \usepackage{booktabs}.
+\begin{table*}[t]
+  \centering
+  \caption{Controlled formal-test comparison on the fixed 50-image project-test manifest. All methods start from the same crop-trained source checkpoint and use the same continuation budget.}
+  \label{tab:main_results}
+  \scriptsize
+  \setlength{\tabcolsep}{3.0pt}
+  \renewcommand{\arraystretch}{1.10}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrr@{}}
+    \toprule
+    Method & PSNR $\uparrow$ & SSIM $\uparrow$ & LPIPS $\downarrow$ & Top-25 local PSNR $\uparrow$ & P95 MSE $\downarrow$ & Gini $\downarrow$ & BER@30\% $\downarrow$ \\
+    \midrule
+    Global continuation & 36.263172 & 0.950759 & 0.002350 & 35.522213 & 3.016532$\times10^{-4}$ & 0.095007 & 0.1131250 \\
+    Hard P16/S16/Top-25\% & 36.418147 & 0.952313 & \textbf{0.002200} & 35.716045 & 2.876246$\times10^{-4}$ & 0.089031 & 0.1131875 \\
+    Hard P16/S8/Top-25\% & \textbf{36.445329} & \textbf{0.952631} & 0.002205 & 35.747490 & 2.856057$\times10^{-4}$ & 0.088604 & 0.1131875 \\
+    \textbf{Hard P16/S8/Top-10\% (Ours)} & 36.442300 & 0.952541 & 0.002215 & \textbf{35.754376} & \textbf{2.844551$\times10^{-4}$} & \textbf{0.086897} & \textbf{0.1129375} \\
+    \bottomrule
+  \end{tabular*}
+  \vspace{2pt}
+  \parbox{\textwidth}{\scriptsize P16 = 16$\times$16 training patch; S8/S16 = stride; Top-$k$ = highest raw-MSE patch fraction selected during training.}
+\end{table*}

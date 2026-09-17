@@ -1,0 +1,13 @@
+--- final run environment ---
+2026-09-16T11:38:20Z
+gpu_assignment=0
+Python 3.12.8
+numpy 1.26.4
+torch 2.7.0+cu126
+cuda 12.6
+cudnn 90501
+visible_devices 1
+device NVIDIA A800-SXM4-80GB
+precision=float32
+deterministic=true; workers=0; batch_size=16; input=128x128 RGB; payload=64 bits
+source_sha=1a82ec4f9559c5861fdcbd51ddd76b4ecce2507e7ecf8c1a7e63a9ea6cce2907

@@ -1,0 +1,13 @@
+{
+  "input": "reports/final_ours_project_test_per_image.csv",
+  "comparison": "Ours - MBRS crop-trained global",
+  "n_images": 50,
+  "n_bootstrap": 20000,
+  "analysis_seed": 20260916,
+  "unit_of_resampling": "paired image index",
+  "paper_estimator": "10*log10(1 / mean_i(global_mse_i))",
+  "global_mse_source_field": "global_mse from clipped RGB per-image evaluator",
+  "difference_estimator": "paper_psnr(ours bootstrap mean MSE) - paper_psnr(global bootstrap mean MSE)",
+  "original_other_metric_bootstraps_unchanged": true,
+  "project_test_used_for_selection": false
+}

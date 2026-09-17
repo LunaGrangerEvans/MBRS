@@ -1,0 +1,43 @@
+method,attack,parameter,repeat,ber,status
+Ours-base,crop,retained_50%,0,0.0,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_50%,1,0.0,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_50%,2,0.0190625,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_50%,3,0.0228125,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_50%,4,0.03875,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_40%,0,0.0053125,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_40%,1,0.045625,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_40%,2,0.0678125,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_40%,3,0.06375,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_40%,4,0.03875,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_30%,0,0.1490625,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_30%,1,0.06375,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_30%,2,0.0828125,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_30%,3,0.141875,robustness-only; not used for Figure 2 selection
+Ours-base,crop,retained_30%,4,0.1121875,robustness-only; not used for Figure 2 selection
+Ours-base,gaussian,sigma_0.005_model_space,0,0.0,robustness-only; fixed seed; not used for Figure 2 selection
+Ours-base,gaussian,sigma_0.01_model_space,0,0.0,robustness-only; fixed seed; not used for Figure 2 selection
+Ours-base,gaussian,sigma_0.02_model_space,0,0.0,robustness-only; fixed seed; not used for Figure 2 selection
+Ours-base,JPEG,quality_90_subsampling2,0,0.4528125,robustness-only; not used for Figure 2 selection
+Ours-base,JPEG,quality_70_subsampling2,0,0.463125,robustness-only; not used for Figure 2 selection
+Ours-base,JPEG,quality_50_subsampling2,0,0.4690625,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_50%,0,0.0,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_50%,1,0.0,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_50%,2,0.0190625,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_50%,3,0.021875,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_50%,4,0.0378125,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_40%,0,0.005,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_40%,1,0.045,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_40%,2,0.0659375,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_40%,3,0.061875,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_40%,4,0.040625,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_30%,0,0.1490625,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_30%,1,0.06375,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_30%,2,0.0821875,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_30%,3,0.1434375,robustness-only; not used for Figure 2 selection
+Ours,crop,retained_30%,4,0.1146875,robustness-only; not used for Figure 2 selection
+Ours,gaussian,sigma_0.005_model_space,0,0.0,robustness-only; fixed seed; not used for Figure 2 selection
+Ours,gaussian,sigma_0.01_model_space,0,0.0,robustness-only; fixed seed; not used for Figure 2 selection
+Ours,gaussian,sigma_0.02_model_space,0,0.0,robustness-only; fixed seed; not used for Figure 2 selection
+Ours,JPEG,quality_90_subsampling2,0,0.5471875,robustness-only; not used for Figure 2 selection
+Ours,JPEG,quality_70_subsampling2,0,0.4675,robustness-only; not used for Figure 2 selection
+Ours,JPEG,quality_50_subsampling2,0,0.4678125,robustness-only; not used for Figure 2 selection

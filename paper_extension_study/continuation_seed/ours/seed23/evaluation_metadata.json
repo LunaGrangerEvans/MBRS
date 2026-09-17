@@ -1,0 +1,41 @@
+{
+  "checkpoint": "paper_extension_study/continuation_seed/ours/seed23/checkpoint_0020.pth",
+  "checkpoint_epoch": 20,
+  "checkpoint_config": {
+    "name": "continuation_ours_seed23",
+    "seed": 23,
+    "dataset_path": "/mnt/wmcontent/GLX/icassp/MBRS/datasets",
+    "H": 128,
+    "W": 128,
+    "message_length": 64,
+    "batch_size": 16,
+    "num_workers": 0,
+    "epochs": 20,
+    "lr": 0.0001,
+    "noise_layers": [
+      "RandomCrop()"
+    ],
+    "message_loss_weight": 10.0,
+    "deterministic": true,
+    "deterministic_warn_only": false,
+    "require_single_gpu": true,
+    "save_every": 5,
+    "global_loss_weight": 0.5,
+    "local_loss_weight": 0.5,
+    "local_loss_mode": "topk",
+    "local_patch_size": 16,
+    "local_patch_stride": 8,
+    "local_topk_ratio": 0.1,
+    "global_oklab_weight": 0.059149764,
+    "global_oklab_version": "linear_srgb_author_matrix_v1"
+  },
+  "device": "cuda",
+  "batch_size": 16,
+  "validation_manifest": "/mnt/wmcontent/GLX/icassp/MBRS/reports/content_selector/validation_manifest.pt",
+  "project_test_manifest": "/mnt/wmcontent/GLX/icassp/MBRS/reports/uniform_eval_manifest.pt",
+  "project_test_crop_extension": "/mnt/wmcontent/GLX/icassp/MBRS/reports/controlled_crop35_40_manifest.pt",
+  "validation_crop_masks": "/mnt/wmcontent/GLX/icassp/MBRS/reports/crop_global_oklab/validation_crop_masks.pt",
+  "metric_evaluator": "experiments.evaluate_extended_image_quality.evaluate plus fixed CIEDE2000 5x5 stride-1 top10/P99/image-level BER extension",
+  "project_test_used_for_selection": false,
+  "paper_bundle_unchanged": true
+}

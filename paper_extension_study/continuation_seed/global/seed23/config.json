@@ -1,0 +1,26 @@
+{
+  "name": "continuation_global_seed23",
+  "seed": 23,
+  "dataset_path": "/mnt/wmcontent/GLX/icassp/MBRS/datasets",
+  "H": 128,
+  "W": 128,
+  "message_length": 64,
+  "batch_size": 16,
+  "num_workers": 0,
+  "epochs": 20,
+  "lr": 0.0001,
+  "noise_layers": [
+    "RandomCrop(0.3, 1.0)"
+  ],
+  "message_loss_weight": 10.0,
+  "deterministic": true,
+  "deterministic_warn_only": false,
+  "require_single_gpu": true,
+  "save_every": 5,
+  "global_loss_weight": 1.0,
+  "local_loss_weight": 0.0,
+  "local_loss_mode": "none",
+  "local_patch_size": 16,
+  "local_patch_stride": 8,
+  "local_topk_ratio": 0.1
+}

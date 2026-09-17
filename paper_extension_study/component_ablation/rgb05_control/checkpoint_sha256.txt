@@ -1,0 +1,1 @@
+9fff6f945e0d3c495ed67a083b980c0903a898314ccb5034ed95012089ca265c  paper_extension_study/component_ablation/rgb05_control/checkpoint_0020.pth

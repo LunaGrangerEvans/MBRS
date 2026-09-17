@@ -1,0 +1,16 @@
+% Internal source-resolution matched-PSNR project-test values only.
+% Do not replace these with the external 512x512 display-space 40.72 dB results.
+\begin{table*}[t]
+  \centering
+  \caption{Internal source-resolution matched-PSNR analysis.}
+  \label{tab:matched-psnr}
+  \small
+  \begin{tabular}{lrrrrrr}
+    \hline
+    Method & PSNR & Top-25 Local PSNR & P95 MSE & LPIPS & Global CIEDE2000 & BER@30 \\
+    \hline
+    MBRS crop-trained global & 36.910772 & 36.169771 & $2.598485021\mathrm{e}{-04}$ & 0.00201959 & 3.289427 & 0.1131250 \\
+    Ours & 36.906757 & 36.193775 & $2.588815489\mathrm{e}{-04}$ & 0.00189444 & 3.235305 & 0.1131250 \\
+    \hline
+  \end{tabular}
+\end{table*}

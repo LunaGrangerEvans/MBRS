@@ -1,0 +1,52 @@
+% Minimal ICASSP-compatible paper skeleton. Replace bracketed placeholders.
+% No project-local ICASSP template was present when this bundle was assembled.
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\title{[Paper title]}
+\author{[Authors and affiliations]}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+[Abstract placeholder.]
+\end{abstract}
+
+\section{Introduction}
+[Introduction placeholder.]
+
+\section{Method}
+[Method placeholder. Describe the adopted MBRS encoder--decoder path, Hard Local-Tail training loss, and global OKLab regularization.]
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../figures/figure1_framework.pdf}
+  \caption{Framework of the frozen final method. Hard Local-Tail and OKLab are training losses only; inference uses the unchanged MBRS encoder--crop channel--decoder path.}
+  \label{fig:framework}
+\end{figure*}
+
+\section{Experimental Setup}
+[Experimental setup placeholder.]
+
+\section{Results}
+[Results placeholder.]
+
+\input{../tables/table1_main_ablation.tex}
+\input{../tables/table2_matched_psnr.tex}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.95\textwidth]{../figures/figure2_matched_psnr.pdf}
+  \caption{Matched-PSNR qualitative comparison; mean display PSNR = 40.72 dB. All four methods are shown at validation-calibrated operating points. External BER is not strictly comparable and is not ranked.}
+  \label{fig:matched-psnr}
+\end{figure*}
+
+\section{Conclusion}
+[Conclusion placeholder.]
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
